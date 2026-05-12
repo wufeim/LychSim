@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Camera Lit Capture Parameters &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/camera_lit_params';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Troubleshooting" href="known_issues.html" />
+    <link rel="prev" title="List of 3D Assets" href="assets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Camera Lit Capture Parameters</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="camera-lit-capture-parameters">
+<h1>Camera Lit Capture Parameters<a class="headerlink" href="#camera-lit-capture-parameters" title="Link to this heading">#</a></h1>
+<p>Here we discuss the parameters available for controlling the lit capture of a camera in LychSim. Qualitative examples of the effects are available at the bottom of this page.</p>
+<section id="warmup-parameters">
+<h2>Warmup Parameters<a class="headerlink" href="#warmup-parameters" title="Link to this heading">#</a></h2>
+<p>Capturing the lit image of a camera in LychSim requires the camera to be warmed up for a few frames before a clean image can be read back. This is a consequence of how UE5 renders the scene:</p>
+<ul class="simple">
+<li><p><strong>Lumen</strong> (used for both dynamic global illumination and reflections in <code class="code docutils literal notranslate"><span class="pre">ULitCamSensor</span></code>) is a temporal algorithm — its radiance caches, screen-space probes, and reflection data are built up over multiple frames and are not fully converged on the first render.</p></li>
+<li><p><strong>Temporal anti-aliasing</strong> (TAA/TSR) and other screen-space effects (SSR, SSAO, bloom history, auto-exposure) likewise accumulate across frames.</p></li>
+<li><p>The lit sensor runs with <code class="code docutils literal notranslate"><span class="pre">bCaptureEveryFrame</span> <span class="pre">=</span> <span class="pre">false</span></code> and <code class="code docutils literal notranslate"><span class="pre">bAlwaysPersistRenderingState</span> <span class="pre">=</span> <span class="pre">true</span></code>, so these caches only advance when a capture is explicitly requested. Without a few warmup captures, the first readback contains noisy GI, aliased edges, and an unconverged exposure.</p></li>
+</ul>
+<p>There are two ways to warm up the camera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span><span class="o">.</span><span class="n">warmup_cam</span><span class="p">(</span><span class="n">cam_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_cam_lit</span><span class="p">(</span><span class="n">cam_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_cam_lit</span><span class="p">(</span><span class="n">cam_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">warmup</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The results are similar, but the second approach is <strong>significantly faster</strong>. The first form invokes the full <code class="code docutils literal notranslate"><span class="pre">GetLit</span></code> pipeline once per warmup step — each step performs a <code class="code docutils literal notranslate"><span class="pre">CaptureScene</span></code>, a GPU -&gt; CPU <code class="code docutils literal notranslate"><span class="pre">ReadPixels</span></code>, an sRGB &lt;-&gt; linear conversion pass, image serialization, and a full network round-trip back to Python. The second form pushes the warmup count down to the sensor, which loops <code class="code docutils literal notranslate"><span class="pre">CaptureScene();</span> <span class="pre">FlushRenderingCommands();</span></code> internally and only does the expensive readback and round-trip on the final frame, eliminating <code class="code docutils literal notranslate"><span class="pre">N-1</span></code> readbacks and <code class="code docutils literal notranslate"><span class="pre">N-1</span></code> network hops.</p>
+<p>Average capture times for a 1280x720 lit image using different parameters on an RTX 4090 are as follows:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p># Warmup Steps</p></th>
+<th class="head"><p>Warmup Method 1</p></th>
+<th class="head"><p>Warmup Method 2</p></th>
+<th class="head"><p>Warmup Method 2 + Experimental Flag</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0.36</p></td>
+<td><p>0.36</p></td>
+<td><p>0.36</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>1.14</p></td>
+<td><p>0.44</p></td>
+<td><p>0.44</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>1.92</p></td>
+<td><p>0.52</p></td>
+<td><p>0.52</p></td>
+</tr>
+<tr class="row-odd"><td><p>50</p></td>
+<td><p>4.28</p></td>
+<td><p>0.79</p></td>
+<td><p>0.79</p></td>
+</tr>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>8.19</p></td>
+<td><p>1.23</p></td>
+<td><p>1.24</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="experimental-flag">
+<h2>Experimental Flag<a class="headerlink" href="#experimental-flag" title="Link to this heading">#</a></h2>
+<p>An experimental flag is also available for <code class="code docutils literal notranslate"><span class="pre">get_cam_lit</span></code>, which toggles a set of post-process and show-flag overrides on the lit sensor intended to produce sharper, more deterministic captures for synthetic-data use cases. Specifically, when the flag is set, <code class="code docutils literal notranslate"><span class="pre">ULitCamSensor::CaptureLit</span></code> disables:</p>
+<ul class="simple">
+<li><p><strong>Temporal anti-aliasing</strong> (<code class="code docutils literal notranslate"><span class="pre">ShowFlags.TemporalAA</span> <span class="pre">=</span> <span class="pre">false</span></code>) — removes temporal accumulation so each captured frame stands on its own, avoiding ghosting between captures of moving objects or cameras.</p></li>
+<li><p><strong>Motion blur</strong> (<code class="code docutils literal notranslate"><span class="pre">MotionBlurAmount</span> <span class="pre">=</span> <span class="pre">0</span></code>, <code class="code docutils literal notranslate"><span class="pre">ShowFlags.MotionBlur</span> <span class="pre">=</span> <span class="pre">false</span></code>) — avoids velocity-based blur when objects or the camera have moved between frames.</p></li>
+<li><p><strong>Depth of field</strong> (<code class="code docutils literal notranslate"><span class="pre">DepthOfFieldScale</span> <span class="pre">=</span> <span class="pre">0</span></code>, <code class="code docutils literal notranslate"><span class="pre">ShowFlags.DepthOfField</span> <span class="pre">=</span> <span class="pre">false</span></code>) — forces a fully sharp image regardless of the active post-process volume’s DoF settings.</p></li>
+</ul>
+<p>These effects are useful for photorealism but harmful for most computer-vision data generation (segmentation masks, depth supervision, 6D pose), which is why they are opt-out behind the experimental flag.</p>
+</section>
+<section id="qualitative-comparison">
+<h2>Qualitative Comparison<a class="headerlink" href="#qualitative-comparison" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id1">
+<img alt="../_images/compare1.jpg" src="../_images/compare1.jpg" />
+<figcaption>
+<p><span class="caption-text">Comparison of lit captures with (1) left: warmup method 1, (2) middle: warmup method 2, and (3) right warmup method 2 + experimental flag. From top to bottom, the number of warmup steps is 0, 10, 20, 50, and 100.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="../_images/compare2.jpg" src="../_images/compare2.jpg" />
+<figcaption>
+<p><span class="caption-text">Comparison of lit captures with (1) left: warmup method 1, (2) middle: warmup method 2, and (3) right warmup method 2 + experimental flag. From top to bottom, the number of warmup steps is 0, 10, 20, 50, and 100.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="assets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">List of 3D Assets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="known_issues.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Troubleshooting</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-parameters">Warmup Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-flag">Experimental Flag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-comparison">Qualitative Comparison</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

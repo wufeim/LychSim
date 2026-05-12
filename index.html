@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LychSim &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/custom.js?v=958ca6b1"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Features" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="lychsim">
+<h1>LychSim<a class="headerlink" href="#lychsim" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>LychSim is a controllable, interactive simulation framework on Unreal Engine 5 – a streamlined Python API, a procedural data pipeline with rich 2D / 3D ground truth, and native MCP integration for reasoning agentic LLMs.</p>
+<p class="centered">
+<strong><a class="reference internal" href="#quick-start">Quick Start</a> · <a class="reference internal" href="#python-api">Python API</a> · <a class="reference internal" href="#mcp">MCP</a> · <a class="reference internal" href="#cli">CLI</a> · <a class="reference internal" href="#data-annotations">Data Annotations</a> · <a class="reference internal" href="#case-studies">Case Studies</a> · <a class="reference internal" href="#citation">Citation</a></strong></p><figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/teaser.jpg"><img alt="_images/teaser.jpg" src="_images/teaser.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">LychSim: a controllable, interactive simulation framework for computer vision research.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<p>Try LychSim with our <a class="reference external" href="tutorials/quick_start.html">Quick Start Package</a> – without an Unreal Engine 5 installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/wufeim/LychSim.git
+lychsim<span class="w"> </span>env<span class="w"> </span>add<span class="w"> </span>/path/to/demo
+lychsim<span class="w"> </span>run<span class="w"> </span>demo
+</pre></div>
+</div>
+<p>For full UE5 setup or building scenes from source, see the <a class="reference external" href="tutorials/installation.html">installation guide</a>.</p>
+</section>
+<section id="python-api">
+<h2>Python API<a class="headerlink" href="#python-api" title="Link to this heading">#</a></h2>
+<p>LychSim provides a Pythonic wrapper that abstracts away UE5 and C++ engine complexities. Researchers can spawn objects, query annotations, and capture pixel-accurate ground truth in a few lines.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/python_api.png"><img alt="_images/python_api.png" src="_images/python_api.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The Python API provides a unified interface for spawning diverse asset types and rendering comprehensive 2D and 3D ground truths.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For the full surface, see the <a class="reference external" href="docs/python_api.html">Python API reference</a>.</p>
+</section>
+<section id="mcp">
+<h2>MCP<a class="headerlink" href="#mcp" title="Link to this heading">#</a></h2>
+<p>LychSim ships with a <a class="reference external" href="https://modelcontextprotocol.io/">Model Context Protocol</a> server, exposing the same Python API to LLM agents (Claude Code, Claude Desktop, Gemini CLI, …) over stdio. The agent reads and acts on a live Unreal scene through standardized tool calls.</p>
+<p>For example, when prompted with <em>“Move the table next to the window”</em>, an agent resolves the request through a sequence of MCP tool calls against the running scene:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>list_objects()                       → [&quot;Table_0&quot;, &quot;Window_3&quot;, &quot;Chair_1&quot;, ...]
+get_object_location([&quot;Window_3&quot;])    → {&quot;location&quot;: [320, -110,  90]}
+get_object_location([&quot;Table_0&quot;])     → {&quot;location&quot;: [ 50,   40,  90]}
+set_object_location(&quot;Table_0&quot;, [310,  -90,  90]) → ok
+</pre></div>
+</div>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/interactive.png"><img alt="_images/interactive.png" src="_images/interactive.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">LychSim’s MCP integration lets agentic LLMs navigate, query, and manipulate the 3D world in real time.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cli">
+<h2>CLI<a class="headerlink" href="#cli" title="Link to this heading">#</a></h2>
+<p>LychSim ships a <code class="docutils literal notranslate"><span class="pre">lychsim</span></code> command-line tool for managing Unreal projects, launching them in the background, and inspecting running instances – without driving <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code> by hand.</p>
+<ul class="simple">
+<li><p><strong>Detached background launches</strong> with auto-bumped ports – multiple UE instances run side-by-side without fighting over <code class="docutils literal notranslate"><span class="pre">unrealcv.ini</span></code>.</p></li>
+<li><p><strong>Per-handle runs registry</strong> with pid + exe-match liveness – powers <code class="docutils literal notranslate"><span class="pre">ps</span></code> / <code class="docutils literal notranslate"><span class="pre">logs</span></code> / <code class="docutils literal notranslate"><span class="pre">stop</span></code> accurately.</p></li>
+<li><p><strong>Two configuration registries</strong>: <code class="docutils literal notranslate"><span class="pre">env</span></code> for projects and binaries, <code class="docutils literal notranslate"><span class="pre">engine</span></code> for UE installs.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">lychsim</span> <span class="pre">doctor</span></code> flags configuration issues – missing paths, disabled plugins, port conflicts.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/cli.png"><img alt="_images/cli.png" src="_images/cli.png" style="width: 90%;" />
+</a>
+</figure>
+<p>See the <a class="reference external" href="docs/cli.html">CLI reference</a> for every subcommand and its flags.</p>
+</section>
+<section id="data-annotations">
+<h2>Data Annotations<a class="headerlink" href="#data-annotations" title="Link to this heading">#</a></h2>
+<p>We release two complementary annotation datasets on the scenes and objects used in LychSim, both loadable with a single <code class="docutils literal notranslate"><span class="pre">datasets.load_dataset</span></code> call:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wufeim/lychsim_objects</span></code> – per-asset semantic category, canonical scale, pose alignment, and precomputed <code class="docutils literal notranslate"><span class="pre">mesh_offset</span></code> for bottom-center spawning.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wufeim/lychsim_scenes</span></code> – scene-level procedural rules: navigable floor spaces, road areas, pedestrian walks, and dynamic vehicle / pedestrian trajectories.</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/procedural_rules.jpg"><img alt="_images/procedural_rules.jpg" src="_images/procedural_rules.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Annotated scene-level procedural rules guide the structural generation of new layouts.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="case-studies">
+<h2>Case Studies<a class="headerlink" href="#case-studies" title="Link to this heading">#</a></h2>
+<section id="synthetic-data-engine">
+<h3>Synthetic Data Engine<a class="headerlink" href="#synthetic-data-engine" title="Link to this heading">#</a></h3>
+<p>LychSim’s procedural simulation pipeline generates high-fidelity synthetic data with comprehensive 2D and 3D ground truth – depth, surface normals, instance / part-level segmentation, point maps, and per-object pose, plus beyond-visible-region annotations such as the underlying geometry of occluded objects. These annotations support the training and evaluation of vision-language models. Recent works built on LychSim include Unreal3DSpace, which analyzes failure patterns in spatial reasoning, and <a class="reference external" href="https://arxiv.org/abs/2511.19526">Perceptual Taxonomy</a>, which targets goal-directed reasoning from 3D scenes.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/groundtruths_2d_3d.png"><img alt="_images/groundtruths_2d_3d.png" src="_images/groundtruths_2d_3d.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Comprehensive 2D and 3D ground-truth annotations rendered automatically by LychSim.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="adversarial-examiners">
+<h3>Adversarial Examiners<a class="headerlink" href="#adversarial-examiners" title="Link to this heading">#</a></h3>
+<p>Standard datasets cover only a narrow subset of the real-world parameter space. LychSim’s controllable simulation enables RL-based adversarial examiners that systematically explore camera viewpoints and scene configurations to surface vision-model weaknesses. We adopt a Gaussian policy trained to minimize Segment Anything’s IoU on a target object; failure cases reveal model weaknesses even on common objects in simple environments.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/adversarial_examiner.png"><img alt="_images/adversarial_examiner.png" src="_images/adversarial_examiner.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">RL-based adversarial examiner exposes Segment Anything’s failure modes by exploring 3D camera viewpoints around a target.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="interactive-scene-planning">
+<h3>Interactive Scene Planning<a class="headerlink" href="#interactive-scene-planning" title="Link to this heading">#</a></h3>
+<p>The MCP integration turns LychSim into a closed-loop playground for language-driven scene layout generation. Agentic LLMs query scene state, plan layouts from natural language, place actors, and verify the result – all through the same standardized tool calls.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/scene_planning.jpg"><img alt="_images/scene_planning.jpg" src="_images/scene_planning.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Language-driven scene planning: an agent constructs and edits 3D layouts through MCP tool calls.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you find LychSim helpful in your research, please cite our paper:</p>
+<div class="line-block">
+<div class="line"><strong>LychSim: A Controllable and Interactive Simulation Framework for Vision Research</strong></div>
+<div class="line"><a class="reference external" href="https://wufeim.github.io/">Wufei Ma</a>, Chloe Wang, Siyi Chen, <a class="reference external" href="https://openreview.net/profile?id=~Jiawei_Peng1">Jiawei Peng</a>, Patrick Li, and <a class="reference external" href="https://www.cs.jhu.edu/~ayuille1/">Alan Yuille</a></div>
+<div class="line">Johns Hopkins University</div>
+</div>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="c">TBD</span>
+</pre></div>
+</div>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>LychSim is built on the architecture of <a class="reference external" href="https://unrealcv.org/">UnrealCV</a> (<a class="reference external" href="https://arxiv.org/abs/1609.01326">Qiu et al., 2017</a>), which exposes Unreal Engine to external Python clients. LychSim extends the plugin into a full interactive simulation framework with new functionalities, procedural generation, and native Python/MCP integration for agentic research.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Features</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-api">Python API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mcp">MCP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli">CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-annotations">Data Annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">Case Studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthetic-data-engine">Synthetic Data Engine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adversarial-examiners">Adversarial Examiners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-scene-planning">Interactive Scene Planning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Using Unreal Engine and LychSim on Linux Server &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/linux';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integration with Other Tools" href="integration/index.html" />
+    <link rel="prev" title="Annotating Procedural Rules" href="annotate_rules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Using Unreal Engine and LychSim on Linux Server</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="using-unreal-engine-and-lychsim-on-linux-server">
+<h1>Using Unreal Engine and LychSim on Linux Server<a class="headerlink" href="#using-unreal-engine-and-lychsim-on-linux-server" title="Link to this heading">#</a></h1>
+<section id="set-up-wsl-for-local-testing">
+<h2>Set Up WSL for Local Testing<a class="headerlink" href="#set-up-wsl-for-local-testing" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Install and enable WSL 1.</strong> Following the <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">official documentation</a> to set up WSL. In this tutorial, we prefer WSL 1 because of a discrepancy in network access between WSL 1 and WSL 2. Read more <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/compare-versions#exceptions-for-using-wsl-1-rather-than-wsl-2">here</a>.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/linux_01.png" src="../_images/linux_01.png" />
+<figcaption>
+<p><span class="caption-text">Setting up WSL 1.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Install Ubuntu.</strong> Run <code class="code docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">Ubuntu</span></code>.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/linux_02.png" src="../_images/linux_02.png" />
+<figcaption>
+<p><span class="caption-text">Installing Ubuntu.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../_images/linux_03.png" src="../_images/linux_03.png" />
+<figcaption>
+<p><span class="caption-text">Installation successful.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="set-up-build-tools">
+<h2>Set Up Build Tools<a class="headerlink" href="#set-up-build-tools" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Install cross-compile toolchain.</strong> Download and install the cross-compile toolchain for Linux from <a class="reference external" href="https://dev.epicgames.com/documentation/en-us/unreal-engine/linux-development-requirements-for-unreal-engine#cross-compile-toolchain">here</a>. Choose the version according to your Unreal Engine version, <em>e.g.</em>, download v23 for UE5.5. Verify the installation by running the command below. <strong>Reboot your computer after installation.</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;%LINUX_MULTIARCH_ROOT</span><span class="si">%x</span><span class="s2">86_64-unknown-linux-gnu</span><span class="se">\b</span><span class="s2">in\clang++&quot;</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<img alt="../_images/linux_04.png" src="../_images/linux_04.png" />
+<figcaption>
+<p><span class="caption-text">Cross-compile toolchain verification.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Enable Linux as target platform in Epic Games Launcher.</strong></p>
+<figure class="align-center" id="id6">
+<img alt="../_images/linux_05.png" src="../_images/linux_05.png" />
+<figcaption>
+<p><span class="caption-text">Enabling Linux as target platform.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Modify Visual Studio installation to include Linux development with C++ workload.</strong></p>
+<figure class="align-center" id="id7">
+<img alt="../_images/linux_06.png" src="../_images/linux_06.png" />
+<figcaption>
+<p><span class="caption-text">Visual Studio Installer.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="../_images/linux_07.png" src="../_images/linux_07.png" />
+<figcaption>
+<p><span class="caption-text">Include Linux development.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="build-the-ue-project-for-linux">
+<h2>Build the UE Project for Linux<a class="headerlink" href="#build-the-ue-project-for-linux" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Set up the UE project.</strong> Follow <a class="reference external" href="https://wufeim.github.io/LychSim/tutorials/installation.html">this tutorial</a> to set up a UE project with LychSim plugin. Import necessary scenes and assets.</p></li>
+<li><p><strong>Package the project for Linux.</strong> If you don’t see available SDK for Linux development, check the installation of your cross-compile toolchain. Also make sure you have rebooted your computer after installing the toolchain.</p>
+<p>See <a class="reference external" href="https://wufeim.github.io/LychSim/docs/known_issues.html#cannot-package-project-for-linux-issue-with-ubasessionserver">troubleshooting</a> for a known issue about failure of <code class="code docutils literal notranslate"><span class="pre">UbaSessionServer</span></code> on latest Windows updates.</p>
+<figure class="align-center" id="id9">
+<img alt="../_images/linux_14.png" src="../_images/linux_14.png" />
+<figcaption>
+<p><span class="caption-text">Packaging for Linux.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="../_images/linux_09.png" src="../_images/linux_09.png" />
+<figcaption>
+<p><span class="caption-text">You should now see a launching script in your project directory or a subdirectory named <code class="code docutils literal notranslate"><span class="pre">Linux</span></code>.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="run-ue-project-in-wsl">
+<h2>Run UE Project in WSL<a class="headerlink" href="#run-ue-project-in-wsl" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Locate the launch script.</strong> To test it in WSL, identify the path in Windows and in WSL. For example, if your launching script is located at <code class="code docutils literal notranslate"><span class="pre">C:UsersusernameDocumentsUnreal</span> <span class="pre">Projectslinux_demolinux_demo.sh</span></code> in Windows, the corresponding WSL path would be <code class="code docutils literal notranslate"><span class="pre">/mnt/c/Users/username/Documents/UnrealProjects/linux_demo/linux_demo.sh</span></code>.</p></li>
+<li><p><strong>Identify the map name.</strong> From the <code class="code docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Maps</span> <span class="pre">&amp;</span> <span class="pre">Modes</span></code> in Unreal Editor, you will find a list of maps that are available to launch from. Note the name of the map you want to launch. In this example, the map name is <code class="code docutils literal notranslate"><span class="pre">FirstPersonMap</span></code>.</p>
+<figure class="align-center" id="id11">
+<img alt="../_images/linux_10.png" src="../_images/linux_10.png" />
+<figcaption>
+<p><span class="caption-text">Map name.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Run the script in WSL.</strong> Open your WSL terminal and navigate to the directory containing the launch script. Run the script with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>linux_demo.sh<span class="w"> </span><span class="s2">&quot;FirstPersonMap?listen&quot;</span><span class="w"> </span>-port<span class="o">=</span><span class="m">7777</span><span class="w"> </span>-nullrhi<span class="w"> </span>-nosound
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><span class="mono">-port=7777</span> specifies the port number for network communication.</p></li>
+<li><p><span class="mono">-nullrhi</span> disables rendering, which is useful for (1) quick tests, or (2) connecting from a UE game client.</p></li>
+<li><p><span class="mono">-nosound</span> disables sound processing.</p></li>
+</ul>
+<figure class="align-center" id="id12">
+<img alt="../_images/linux_11.png" src="../_images/linux_11.png" />
+<figcaption>
+<p><span class="caption-text">UE5 instance running in WSL and listening on port 7777.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Connect to the UE instance from Unreal Editor.</strong> Open another WSL terminal and identify the IP address of WSL by running <code class="code docutils literal notranslate"><span class="pre">ip</span> <span class="pre">addr</span> <span class="pre">show</span> <span class="pre">eth0</span></code>. Use this IP address to connect to the UE instance from another terminal or machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wsl<span class="w"> </span>hostname<span class="w"> </span>-I
+</pre></div>
+</div>
+<p>Now play the game and then run the following command in the Unreal Editor console to connect to the UE instance running in WSL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="mf">192.168.1.169</span><span class="p">:</span><span class="mi">7777</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id13">
+<img alt="../_images/linux_12.png" src="../_images/linux_12.png" />
+<figcaption>
+<p><span class="caption-text">Connecting to the UE5 instance from Unreal Editor.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id14">
+<img alt="../_images/linux_13.png" src="../_images/linux_13.png" />
+<figcaption>
+<p><span class="caption-text">You should also see the connection log in the WSL terminal where the UE instance is running.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="run-ue-project-in-linux-server-with-lychsim">
+<h2>Run UE Project in Linux Server with LychSim<a class="headerlink" href="#run-ue-project-in-linux-server-with-lychsim" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Transfer the packaged project to your Linux server.</strong> For example, you can use <code class="code docutils literal notranslate"><span class="pre">scp</span></code> command to copy the project files from your local machine to the server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\u</span>sername<span class="se">\U</span>nreal<span class="w"> </span>Projects<span class="se">\s</span>erver_demo<span class="se">\L</span>inux<span class="w"> </span>username@your_server_ip:~/ue/server_demo
+</pre></div>
+</div>
+</li>
+<li><p><strong>Connect to the Linux server and launch the script.</strong> Use the map name identified earlier to run the launch script on the server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>username@your_server_ip
+<span class="nb">cd</span><span class="w"> </span>~/ue/server_demo
+chmod<span class="w"> </span>+x<span class="w"> </span>./server_demo.sh
+./server_demo.sh<span class="w"> </span><span class="s2">&quot;FirstPersonMap?listen&quot;</span><span class="w"> </span>-port<span class="o">=</span><span class="m">7777</span><span class="w"> </span>-RenderOffscreen<span class="w"> </span>-vulkan<span class="w"> </span>-windowed<span class="w"> </span>-ResX<span class="o">=</span><span class="m">1920</span><span class="w"> </span>-ResY<span class="o">=</span><span class="m">1080</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><span class="mono">-port=7777</span> specifies the port number for network communication.</p></li>
+<li><p><span class="mono">-RenderOffscreen</span> enables GPU rendering without displaying to a physical screen.</p></li>
+<li><p><span class="mono">-vulkan</span> specifies the use of Vulkan rendering API.</p></li>
+<li><p><span class="mono">-windowed -ResX=1920 -ResY=1080</span> sets the windowed mode and resolution.</p></li>
+</ul>
+<figure class="align-center" id="id15">
+<img alt="../_images/linux_16.png" src="../_images/linux_16.png" />
+<figcaption>
+<p><span class="caption-text">UE5 instance running on Linux server using GPU rendering.</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Enable remote access.</strong> If you want to run LychSim on local machine, enable remote access to port 7777 for UE instance and port 9000 for LychSim server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">7777</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">7777</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">9000</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">9000</span>/tcp
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p><strong>Now we can use LychSim by specifying the server IP and port number.</strong> For example, in Python API:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lychsim.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">LychSim</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">LychSim</span><span class="p">(</span><span class="n">server_name</span><span class="o">=</span><span class="s1">&#39;your_server_ip&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id16">
+<img alt="../_images/linux_17.png" src="../_images/linux_17.png" />
+<figcaption>
+<p><span class="caption-text">All tests passed successfully!</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="annotate_rules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Annotating Procedural Rules</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="integration/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integration with Other Tools</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wsl-for-local-testing">Set Up WSL for Local Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-build-tools">Set Up Build Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-ue-project-for-linux">Build the UE Project for Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ue-project-in-wsl">Run UE Project in WSL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ue-project-in-linux-server-with-lychsim">Run UE Project in Linux Server with LychSim</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

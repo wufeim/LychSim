@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Using LychSim Datasets &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/using_datasets';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Using LychSim Datasets</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="using-lychsim-datasets">
+<h1>Using LychSim Datasets<a class="headerlink" href="#using-lychsim-datasets" title="Link to this heading">#</a></h1>
+<p>This documentation applies to LychSim datasets as of November 2025.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>LychSim data collection typically proceeds in three stages. First, we randomly sample a set of objects along with their initial placements. Next, we enable Unreal Engine (UE) physics simulation and wait until all objects reach a stable configuration. Finally, we select a camera viewpoint (or trajectory) and collect the data.</p>
+<p>Data are saved in directories named using the format <code class="code docutils literal notranslate"><span class="pre">sample_000_cam_000</span></code>, where sample ID corresponds to a scene with randomly placed objects, and camera ID identifies a specific camera location or trajectory.</p>
+<p>As illustrated below, each directory contains six files. In addition to RGB (lit), segmentation, depth, and normal renderings, <code class="code docutils literal notranslate"><span class="pre">object_annots.json</span></code> stores annotations describing the environment, objects, and sampling parameters, while <code class="code docutils literal notranslate"><span class="pre">camera_annots.json</span></code> records important information about the camera parameters.</p>
+<figure class="align-default" id="id2">
+<img alt="../_images/using_datasets_01.png" src="../_images/using_datasets_01.png" />
+<figcaption>
+<p><span class="caption-text">File layouts.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="camera-annotations">
+<h2>Camera Annotations<a class="headerlink" href="#camera-annotations" title="Link to this heading">#</a></h2>
+<p>We can load camera extrinsic and intrinsic parameters from <code class="code docutils literal notranslate"><span class="pre">camera_annots.json</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;camera_annots.json&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;status&#39;, &#39;outputs&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+<span class="go">&#39;ok&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;location&#39;, &#39;rotation&#39;, &#39;fov&#39;, &#39;c2w&#39;, &#39;width&#39;, &#39;height&#39;, &#39;fxfycxcy&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">][</span><span class="s2">&quot;location&quot;</span><span class="p">]</span>
+<span class="go">[-1183.3726806640625, 6058.03076171875, 374.64801025390625]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">][</span><span class="s2">&quot;rotation&quot;</span><span class="p">]</span>
+<span class="go">[-5.717591762542727, 27.658029556274425, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;outputs&quot;</span><span class="p">][</span><span class="s2">&quot;fxfycxcy&quot;</span><span class="p">]</span>
+<span class="go">[960.0000000000001, 960.0000000000002, 960.0, 540.0]</span>
+</pre></div>
+</div>
+</section>
+<section id="object-annotations">
+<h2>Object Annotations<a class="headerlink" href="#object-annotations" title="Link to this heading">#</a></h2>
+<p>We can load scene and object annotations from <code class="code docutils literal notranslate"><span class="pre">object_annots.json</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;object_annots.json&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;status&#39;, &#39;outputs&#39;, &#39;sampling&#39;, &#39;scene_state&#39;, &#39;lighting&#39;, &#39;fog&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+<span class="go">&#39;ok&#39;</span>
+</pre></div>
+</div>
+<p>We save the object sampling parameters used for placing the objects. (See <a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/notebooks/data_collection_outdoor_helpers.py#L372">this code</a>.) Here <code class="code docutils literal notranslate"><span class="pre">annots[&quot;sampling&quot;]</span></code> is a list of dictionaries, each containing location, rotation, mesh path, etc. The locations are the initial object positions before the physics simulation.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;sampling&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">{&#39;loc&#39;: [-874.3808910999799, 6505.062123544488, -20.556038], &#39;rot&#39;: [0, -9.56143919756771, 0], &#39;obj_path&#39;: &#39;/Game/Vehicles/VOL12_EmergencyResponse/Meshes/SM_Pd_Van_01a.SM_Pd_Van_01a&#39;, &#39;extent&#39;: [323.2451171875001, 131.63250732421886, 144.87890625], &#39;object_id&#39;: &#39;SM_Pd_Van_01a_c30f9f00&#39;}</span>
+</pre></div>
+</div>
+<p>Scene state is also saved in <code class="code docutils literal notranslate"><span class="pre">annots[&quot;scene_state&quot;]</span></code>, corresponding to the scene state information used when collecting data. (See <a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/notebooks/lychsim_data_collection_outdoor.ipynb">this notebook</a>.)</p>
+<figure class="align-default" id="id3">
+<img alt="../_images/using_datasets_02.png" src="../_images/using_datasets_02.png" />
+<figcaption>
+<p><span class="caption-text">Scene state usage.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Key lighting parameters, such as rotation and temperature of the directional light is saved in <code class="code docutils literal notranslate"><span class="pre">annots[&quot;lighting&quot;]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;lighting&quot;</span><span class="p">]</span>
+<span class="go">{&#39;rotation&#39;: [-68.39920043945308, 128.7829742494278, -126.29943847656249], &#39;temperature&#39;: 6344}</span>
+</pre></div>
+</div>
+<p>If fog is simulated, we also record the fog density in <code class="code docutils literal notranslate"><span class="pre">annots[&quot;fog&quot;]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s2">&quot;fog&quot;</span><span class="p">]</span>
+<span class="go">{&#39;density&#39;: 0.002}</span>
+</pre></div>
+</div>
+<p>We save all object annotations in <code class="code docutils literal notranslate"><span class="pre">annots[&quot;outputs&quot;]</span></code>. The field <code class="code docutils literal notranslate"><span class="pre">sampled_by_us</span></code> implies if an object is sampled by us, <em>e.g.</em>, objects already in the scene file or ones we added to the scene. For objects not sampled by us, we store standard annotations as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">annots</span><span class="p">[</span><span class="s1">&#39;outputs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;object_id&#39;, &#39;status&#39;, &#39;guid&#39;, &#39;aabb&#39;, &#39;obb&#39;, &#39;bounds&#39;, &#39;bounds_tight&#39;, &#39;location&#39;, &#39;rotation&#39;, &#39;scale&#39;, &#39;color&#39;, &#39;asset_path&#39;, &#39;sampled_by_us&#39;])</span>
+</pre></div>
+</div>
+<p>For objects sampled by us, we store extra sampling parameters, same as ones stored in <code class="code docutils literal notranslate"><span class="pre">annots[&quot;sampling&quot;]</span></code>. (See <a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/notebooks/data_collection_outdoor_helpers.py#L515">this code</a>.)</p>
+</section>
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">#</a></h2>
+<p>We first load camera parameters for 3D to 2D projection.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="s2">&quot;camera_annots.json&quot;</span><span class="p">)))[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We also load object annotations and <code class="code docutils literal notranslate"><span class="pre">scene_state</span></code> that records dimensions of the objects.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">annots</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="s2">&quot;object_annots.json&quot;</span><span class="p">)))[</span><span class="s2">&quot;outputs&quot;</span><span class="p">]</span>
+<span class="n">scene_state</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="s2">&quot;object_annots.json&quot;</span><span class="p">)))[</span><span class="s2">&quot;scene_state&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now we visualize the target objects.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">scene_state</span><span class="p">):</span>
+    <span class="n">asset_path</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;sampling_info&quot;</span><span class="p">][</span><span class="s2">&quot;obj_path&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">obj_id</span><span class="o">=</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;object_id&quot;</span><span class="p">],</span>
+        <span class="n">extents</span><span class="o">=</span><span class="n">scene_state</span><span class="p">[</span><span class="s2">&quot;mesh_extents&quot;</span><span class="p">][</span><span class="n">asset_path</span><span class="p">],</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">],</span>
+        <span class="n">rotation</span><span class="o">=</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;rotation&quot;</span><span class="p">],</span>
+        <span class="n">yaw_bias</span><span class="o">=</span><span class="n">sampling_params</span><span class="p">[</span><span class="n">asset_path</span><span class="p">][</span><span class="s2">&quot;rotation yaw&quot;</span><span class="p">],</span>
+        <span class="n">loc_z_bias</span><span class="o">=</span><span class="n">sampling_params</span><span class="p">[</span><span class="n">asset_path</span><span class="p">][</span><span class="s2">&quot;location z&quot;</span><span class="p">],</span>
+        <span class="n">mesh_2d_offset</span><span class="o">=</span><span class="p">[</span><span class="n">sampling_params</span><span class="p">[</span><span class="n">asset_path</span><span class="p">][</span><span class="s2">&quot;mesh_2d_offset_x&quot;</span><span class="p">],</span> <span class="n">sampling_params</span><span class="p">[</span><span class="n">asset_path</span><span class="p">][</span><span class="s2">&quot;mesh_2d_offset_y&quot;</span><span class="p">]]</span>
+    <span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cam</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="n">yaw_bias</span> <span class="o">=</span> <span class="o">-</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;yaw_bias&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">ex</span><span class="p">,</span> <span class="n">ey</span><span class="p">,</span> <span class="n">ez</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;extents&quot;</span><span class="p">]</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">]</span>
+    <span class="n">rot</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;rotation&quot;</span><span class="p">]</span>  <span class="c1"># ry, rz, rx = pitch, yaw, roll</span>
+    <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;mesh_2d_offset&quot;</span><span class="p">]</span>
+
+    <span class="n">corners_local_chassis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="n">ox</span><span class="o">-</span><span class="n">ex</span><span class="p">,</span> <span class="n">oy</span><span class="o">-</span><span class="n">ey</span><span class="p">],</span> <span class="p">[</span><span class="n">ox</span><span class="o">+</span><span class="n">ex</span><span class="p">,</span> <span class="n">oy</span><span class="o">-</span><span class="n">ey</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">ox</span><span class="o">+</span><span class="n">ex</span><span class="p">,</span> <span class="n">oy</span><span class="o">+</span><span class="n">ey</span><span class="p">],</span> <span class="p">[</span><span class="n">ox</span><span class="o">-</span><span class="n">ex</span><span class="p">,</span> <span class="n">oy</span><span class="o">+</span><span class="n">ey</span><span class="p">]])</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">yaw_bias</span><span class="p">),</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">yaw_bias</span><span class="p">)],</span>
+        <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">yaw_bias</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">yaw_bias</span><span class="p">)],</span>
+    <span class="p">])</span>
+    <span class="n">corners_local_chassis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">corners_local_chassis</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">corners_local</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">corners_local_chassis</span><span class="p">,</span> <span class="n">corners_local_chassis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">corners_local</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">corners_local</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">ez</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">ez</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">ez</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">ez</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">pitch</span> <span class="o">=</span> <span class="o">-</span><span class="n">rot</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">yaw</span> <span class="o">=</span> <span class="n">rot</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="o">-</span><span class="n">rot</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;loc_z_bias&quot;</span><span class="p">]</span>
+
+    <span class="n">corners3d</span> <span class="o">=</span> <span class="n">get_corners_3d</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">corners_local</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">roll</span><span class="p">)</span>
+    <span class="n">corners2d</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">corners3d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cam</span><span class="p">[</span><span class="s2">&quot;c2w&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cam</span><span class="p">[</span><span class="s2">&quot;fxfycxcy&quot;</span><span class="p">])</span>
+
+    <span class="n">Ls</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])]</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">Ls</span><span class="p">)</span>
+
+    <span class="n">center3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">corners3d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">other_points_3d</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">center3d</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span>
+        <span class="n">center3d</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span>
+        <span class="n">center3d</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]),</span>
+        <span class="n">center3d</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]),</span>
+        <span class="n">center3d</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">]),</span>
+        <span class="n">center3d</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">]),</span>
+        <span class="n">enter3d</span><span class="p">,</span>
+        <span class="n">center3d</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span>
+        <span class="n">center3d</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span>
+        <span class="n">center3d</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">corners3d</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">corners3d</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">other_points_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">other_points_3d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">other_points_2d</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">other_points_3d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cam</span><span class="p">[</span><span class="s2">&quot;c2w&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cam</span><span class="p">[</span><span class="s2">&quot;fxfycxcy&quot;</span><span class="p">])</span>
+    <span class="n">other_points_2d</span> <span class="o">=</span> <span class="n">other_points_2d</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+
+    <span class="n">cam_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cam</span><span class="p">[</span><span class="s2">&quot;c2w&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">other_points_3d</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">-</span> <span class="n">cam_loc</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">dist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+    <span class="n">face_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">[</span><span class="mi">3</span><span class="p">:]]</span>
+    <span class="n">faces</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+    <span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+    <span class="k">if</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+    <span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+    <span class="k">if</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">face_indices</span><span class="p">:</span>
+        <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+             <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">f</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;cate&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">color_mapping</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;cate&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">color_mapping</span><span class="p">[</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;cate&#39;</span><span class="p">]]</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">visualize_bbox</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">corners2d</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">192</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+            <span class="n">corners2d</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="p">])</span>
+        <span class="n">draw_transparent_poly</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">pts</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">192</span><span class="p">)),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">192</span><span class="p">)),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">192</span><span class="p">))]:</span>
+        <span class="n">pt1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">other_points_2d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">other_points_2d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+        <span class="n">pt2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">other_points_2d</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">other_points_2d</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">img</span>
+
+<span class="n">annots_vis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">annots</span><span class="p">:</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">seg</span> <span class="o">==</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">area</span> <span class="o">&gt;=</span> <span class="n">vis_threshold</span><span class="p">:</span>
+        <span class="n">annots_vis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">annots_vis</span><span class="p">):</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">scene_state</span><span class="p">)</span>
+    <span class="n">vis_img</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">cam</span><span class="p">,</span> <span class="n">scene_state</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
+    <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">vis_img</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;debug_pose_</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-annotations">Camera Annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-annotations">Object Annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

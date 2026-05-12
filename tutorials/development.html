@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Development and Extensions &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/development';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="../docs/index.html" />
+    <link rel="prev" title="Using LychSim with Infinigen" href="integration/infinigen/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Development and Extensions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="development-and-extensions">
+<h1>Development and Extensions<a class="headerlink" href="#development-and-extensions" title="Link to this heading">#</a></h1>
+<p>In this tutorial we will first review the</p>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<p>The structure of the LychSim codebase is shown below. The Python package <code class="code docutils literal notranslate"><span class="pre">lychsim</span></code> is located in <code class="code docutils literal notranslate"><span class="pre">src/lychsim</span></code>, while the Unreal Engine plugin written in C++ is located in <code class="code docutils literal notranslate"><span class="pre">ue_plugin/LychSim</span></code>. In addition, we provide example scripts in <code class="code docutils literal notranslate"><span class="pre">example_scripts</span></code> and demo notebooks in <code class="code docutils literal notranslate"><span class="pre">notebooks</span></code>.</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/development_01.png" src="../_images/development_01.png" />
+<figcaption>
+<p><span class="caption-text">Codebase structure.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The Python package <code class="code docutils literal notranslate"><span class="pre">lychsim</span></code> implements helper functions to control the Unreal Engine simulation and data I/O. Notably some wrapper functions are implemented in <code class="code docutils literal notranslate"><span class="pre">src/lychsim/api/wrapper</span></code> to enable simpler controls.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/development_02.png" src="../_images/development_02.png" />
+<figcaption>
+<p><span class="caption-text">Python package.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The Unreal Engine plugin <code class="code docutils literal notranslate"><span class="pre">LychSim</span></code> is built on our previous <a class="reference external" href="https://unrealcv.org/">UnrealCV</a> plugin. From now on we will focus on explaining the code structure of this C++ plugin and how various functions are implemented.</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/development_03.png" src="../_images/development_03.png" />
+<figcaption>
+<p><span class="caption-text">Unreal Engine plugin.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="command-parsing">
+<h2>Command Parsing<a class="headerlink" href="#command-parsing" title="Link to this heading">#</a></h2>
+<p>LychSim enables Unix/POSIX-style command-line interface (CLI), <em>e.g.</em>,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mycmd<span class="w"> </span>run<span class="w"> </span>-flag<span class="w"> </span>-arg<span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+<p>When executing a LychSim command, the command is first processed by the dispatcher function <code class="code docutils literal notranslate"><span class="pre">FCommandDispatcher::Exec</span></code> (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/ue_plugin/LychSim/Source/LychSim/Private/Server/CommandDispatcher.cpp#L196">link</a>). The raw command is parsed into positional, keyward, and flag arguments by <code class="code docutils literal notranslate"><span class="pre">LychSim::ParseTailWithFParse</span></code> (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/ue_plugin/LychSim/Source/LychSim/Private/Server/CommandDispatcher.cpp#L228">link</a>).</p>
+<p>The parsed command is then executed by <code class="code docutils literal notranslate"><span class="pre">CmdUE-&gt;Execute</span></code> (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/ue_plugin/LychSim/Source/LychSim/Private/Server/CommandDispatcher.cpp#L235">link</a>), which corresponds to arguments of the handler function.</p>
+<p>As an example, we update the location of an object in the Unreal Engine simulation. We first call the <code class="code docutils literal notranslate"><span class="pre">update_obj</span></code> function that takes the object ID, (optional) new location and (optional) new rotation as inputs (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/src/lychsim/api/wrapper/object_mixin.py#L40">link</a>). Note that the location and rotation are processed as keyword arguments and the object ID is regarded as a standard positional argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ObjectCommandsMixin</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj_id</span><span class="p">,</span> <span class="n">loc</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rot</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">loc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">loc</span><span class="p">))</span>
+            <span class="n">params</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; -loc=</span><span class="si">{</span><span class="n">loc</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">rot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rot</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">rot</span><span class="p">))</span>
+            <span class="n">params</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; -rot=</span><span class="si">{</span><span class="n">rot</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;lych obj update </span><span class="si">{</span><span class="n">obj_id</span><span class="si">}{</span><span class="n">params</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command <code class="code docutils literal notranslate"><span class="pre">lych</span> <span class="pre">obj</span> <span class="pre">update</span> <span class="pre">car_01</span> <span class="pre">-loc=0.5,0.2,0.0</span></code> will be parsed into positional arguments <code class="code docutils literal notranslate"><span class="pre">[&quot;car_01&quot;]</span></code>, keyword arguments <code class="code docutils literal notranslate"><span class="pre">{&quot;loc&quot;:</span> <span class="pre">&quot;0.5,0.2,0.0&quot;}</span></code>, and no additional flags.</p>
+<p>Lastly the arguments are processed by the command handler <code class="code docutils literal notranslate"><span class="pre">FLychSimObjectHandler::UpdateObject</span></code> (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimObjectHandler.cpp#L1316">link</a>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FExecStatus</span><span class="w"> </span><span class="nf">FLychSimObjectHandler::UpdateObject</span><span class="p">(</span>
+<span class="w">         </span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Pos</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TMap</span><span class="o">&lt;</span><span class="n">FString</span><span class="p">,</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Kw</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TSet</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Flags</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Note that the object location is always represented as a string during command parsing. The location will be parsed into a list of floats by the command handler itself (<a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimObjectHandler.cpp#L1364">link</a>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">LocStr</span><span class="p">.</span><span class="n">ParseIntoArray</span><span class="p">(</span><span class="n">Parts</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">),</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="example-developing-a-new-command">
+<h2>Example: Developing A New Command<a class="headerlink" href="#example-developing-a-new-command" title="Link to this heading">#</a></h2>
+<p>In this example we develop a new camera command step by step.  Suppose we want to implement a new camera command that returns a point map from the current view. We first define the function handler in <code class="code docutils literal notranslate"><span class="pre">ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimCameraHandler.h</span></code> and <code class="code docutils literal notranslate"><span class="pre">ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimCameraHandler.cpp</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimCameraHandler.h</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FLychSimCameraHandler</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">FCommandHandler</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">RegisterCommands</span><span class="p">();</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">FExecStatus</span><span class="w"> </span><span class="n">GetPointMap</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TMap</span><span class="o">&lt;</span><span class="n">FString</span><span class="p">,</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Kw</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TSet</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Flags</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimCameraHandler.cpp</span>
+<span class="n">FExecStatus</span><span class="w"> </span><span class="nf">FLychSimCameraHandler::GetPointMap</span><span class="p">(</span>
+<span class="w">         </span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Pos</span><span class="p">,</span>
+<span class="w">         </span><span class="k">const</span><span class="w"> </span><span class="n">TMap</span><span class="o">&lt;</span><span class="n">FString</span><span class="p">,</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Kw</span><span class="p">,</span>
+<span class="w">         </span><span class="k">const</span><span class="w"> </span><span class="n">TSet</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Flags</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Then we register the new handlers as callable commands in <code class="code docutils literal notranslate"><span class="pre">ue_plugin/LychSim/Source/LychSim/Private/Commands/LychSimCameraHandler.cpp</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">FLychSimCameraHandler::RegisterCommands</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">CommandDispatcher</span><span class="o">-&gt;</span><span class="n">BindCommandUE</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;lych cam get_pointmap&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">FDispatcherDelegateUE</span><span class="o">::</span><span class="n">CreateRaw</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">FLychSimCameraHandler</span><span class="o">::</span><span class="n">GetPointMap</span><span class="p">),</span>
+<span class="w">        </span><span class="s">&quot;Get point map in camera/world/OpenCV space&quot;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lastly we may implement helper Python functions in <code class="code docutils literal notranslate"><span class="pre">src/lychsim/api/wrapper/camera_mixin.py</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CameraCommandsMixin</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_cam_pointmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cam_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">space</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="integration/infinigen/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using LychSim with Infinigen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../docs/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-parsing">Command Parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-developing-a-new-command">Example: Developing A New Command</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Annotating Procedural Rules &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/annotate_rules';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using Unreal Engine and LychSim on Linux Server" href="linux.html" />
+    <link rel="prev" title="Outdoor Scenes" href="outdoor_scenes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Annotating Procedural Rules</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="annotating-procedural-rules">
+<h1>Annotating Procedural Rules<a class="headerlink" href="#annotating-procedural-rules" title="Link to this heading">#</a></h1>
+<section id="set-up-environment">
+<h2>Set Up Environment<a class="headerlink" href="#set-up-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>UE project with LychSim.</strong> Follow <a class="reference external" href="https://wufeim.github.io/LychSim/tutorials/installation.html">the instructions</a> to set up an UE project with LychSim plugin.</p></li>
+<li><p><strong>Import the 3D scene.</strong> Download one of the <code class="code docutils literal notranslate"><span class="pre">zip</span></code> files containing the 3D scene. Put the folder under the <code class="code docutils literal notranslate"><span class="pre">Content</span></code> folder of your UE project.</p>
+<p>Make sure the scene files are directly under the scene folder, <em>e.g.</em>, <code class="code docutils literal notranslate"><span class="pre">Content\NYC_East_Village</span></code>, not another subfolder like <code class="code docutils literal notranslate"><span class="pre">Content\NYC_East_Village\NYC_East_Village</span></code>.</p>
+</li>
+<li><p><strong>Import LychSimData assets.</strong> Download and unzip the <code class="code docutils literal notranslate"><span class="pre">LychSimData.zip</span></code> file into the <code class="code docutils literal notranslate"><span class="pre">Content</span></code> folder of your UE project.</p></li>
+<li><p><strong>Sanity check.</strong> By this point, you should have the following folder structure if you are using the <code class="code docutils literal notranslate"><span class="pre">NYC_East_Village</span></code> scene:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>your_ue_project
+├── Content
+│   ├── LychSimData
+│       └── Meshes
+│   └── NYC_East_Village
+│       ├── Animation
+│       ├── Blueprint
+│       └── ... (other scene files)
+├── your_ue_project.sln
+├── your_ue_project.uproject
+└── ... (other project files)
+</pre></div>
+</div>
+</li>
+<li><p><strong>Open the procedural rule notebook.</strong> Open the <a class="reference external" href="https://github.com/wufeim/LychSim/blob/main/notebooks/lychsim_collect_rules.ipynb">procedural rule notebook</a>. For the following we will annotate procedural rules by running commands in this notebook.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/annotate_rules_03.png" src="../_images/annotate_rules_03.png" />
+<figcaption>
+<p><span class="caption-text">Open the annotation notebook.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Also make sure to change the name of the scene so your annotations are saved to the correct folder.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/annotate_rules_04.png" src="../_images/annotate_rules_04.png" />
+<figcaption>
+<p><span class="caption-text">Change the scene name in the notebook.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="goal-of-this-tutorial">
+<h2>Goal of This Tutorial<a class="headerlink" href="#goal-of-this-tutorial" title="Link to this heading">#</a></h2>
+<p>Once you open the project, open the map level by opening the <code class="code docutils literal notranslate"><span class="pre">Content</span> <span class="pre">Drawer</span></code> on bottom left of the UE editor and navigating to the scene folder. Enable the filter for <code class="code docutils literal notranslate"><span class="pre">Level</span></code> to show only level files. Often there will be multiple level files for each scene, some of them for testing purposes, <em>e.g.</em>, showcasing all assets in the scene, and others for actual simulation with proper lighting and world layout. If there are multiple world level files, we only care about the main level file with daylight lighting.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/annotate_rules_01.png" src="../_images/annotate_rules_01.png" />
+<figcaption>
+<p><span class="caption-text">Open the content drawer and select the level file.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As you can see, most of the scenes are empty with very few pedestrians or vehicles. The goal of this tutorial is to annotate procedural rules to enable more realistic simulation of pedestrians and vehicles in the scene.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/annotate_rules_02.png" src="../_images/annotate_rules_02.png" />
+<figcaption>
+<p><span class="caption-text">An example scene.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will annotate four types of procedural rules in this tutorial:</p>
+<ol class="arabic simple">
+<li><p><strong>Pedestrians walk directions.</strong> Theses are represented by <strong>undirected splines</strong> in the scene. For instance, most pedestrians in a city scene would walk <strong>along</strong> the streets, not in random directions.</p></li>
+<li><p><strong>Vehicles drive directions.</strong> These are represented by <strong>directed splines</strong> in the scene. For instance, vehicles would drive <strong>along</strong> the roads, and follow traffic rules such as one-way streets.</p></li>
+<li><p><strong>Sidewalk areas.</strong> These are represented by <strong>areas</strong> in the scene. We can spawn any types of objects, such as pedestrians, trash cans, benches, within these areas.</p></li>
+<li><p><strong>Road areas.</strong> These are also represented by <strong>areas</strong> in the scene. We only spawn vehicles within these areas.</p></li>
+</ol>
+</section>
+<section id="annotate-pedestrian-walk-directions">
+<h2>Annotate Pedestrian Walk Directions<a class="headerlink" href="#annotate-pedestrian-walk-directions" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Place pedestrian actors.</strong> Locate the human mesh in the <code class="code docutils literal notranslate"><span class="pre">Content\LychSimData\Meshes</span></code> folder. Drag and drop a few instances of the human mesh into the scene. Place them at keyframes where pedestrians would turn around or cross the street. (Later we will connect these keyframes with splines so we only need two instances along a straight line.)</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/annotate_rules_07.png" src="../_images/annotate_rules_07.png" />
+<figcaption>
+<p><span class="caption-text">Place pedestrian actors in the scene.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Adjust their locations and rotations using the bottom right <strong>transform</strong> panel. (As noted below, since pedestrian walk direction splines are undirected, the rotation does not matter much. It would be important to annotate the correct rotations when annotating vehicle drive direction splines later.)</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/annotate_rules_08.png" src="../_images/annotate_rules_08.png" />
+<figcaption>
+<p><span class="caption-text">Adjust the transform of the pedestrian actors.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Connect and save spline information.</strong> Select the pedestrian actors by holding the <code class="code docutils literal notranslate"><span class="pre">Ctrl</span></code> key and clicking on them one by one. You need to at least two actors to annotate one spline <code class="code docutils literal notranslate"><span class="pre">A</span> <span class="pre">-&gt;</span> <span class="pre">B</span></code>, or multiple splines when more than two actors are selected, <em>e.g.</em>, annotating <code class="code docutils literal notranslate"><span class="pre">A</span> <span class="pre">-&gt;</span> <span class="pre">B</span></code>, <code class="code docutils literal notranslate"><span class="pre">B</span> <span class="pre">-&gt;</span> <span class="pre">C</span></code>, and <code class="code docutils literal notranslate"><span class="pre">C</span> <span class="pre">-&gt;</span> <span class="pre">D</span></code> by selecting four actors <code class="code docutils literal notranslate"><span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C,</span> <span class="pre">D</span></code>.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/annotate_rules_09.png" src="../_images/annotate_rules_09.png" />
+<figcaption>
+<p><span class="caption-text">Select pedestrian actors to annotate walk direction splines.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once selected, run the pedestrian rule block in the notebook to save the spline information.</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/annotate_rules_10.png" src="../_images/annotate_rules_10.png" />
+<figcaption>
+<p><span class="caption-text">Run the pedestrian rule block in the notebook.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Afterwards, you should see debug lines connecting the selected actors in the scene. For simplicity we only draw straight lines between the actors and splines will be generated later during simulation.</p>
+<figure class="align-center" id="id9">
+<img alt="../_images/annotate_rules_11.png" src="../_images/annotate_rules_11.png" />
+<figcaption>
+<p><span class="caption-text">Debug lines showing the annotated pedestrian walk direction splines.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Make sure to also annotate where pedestrians turn at the street corners or when crossing the crosswalks.</p>
+<figure class="align-center" id="id10">
+<img alt="../_images/annotate_rules_12.png" src="../_images/annotate_rules_12.png" />
+<figcaption>
+<p><span class="caption-text">More annotated pedestrian walk direction splines.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>A few notes.</strong></p>
+<ul class="simple">
+<li><p>Since pedestrian walk direction splines are undirected, directions of the pedestrian actors do not matter.</p></li>
+<li><p>Try to cover all streets in the main area of the scene. For instance, we want to be as thorough as possible when annotating pedestrian walk directions in a city scene, but we will not annotate any pedestrian walk directions in a park area or in a countryside farm.</p></li>
+<li><p>Some areas are close to the boundary of the map where you see end of the streets or world background. Do you annotate any splines or areas near these regions.</p></li>
+</ul>
+<figure class="align-center" id="id11">
+<img alt="../_images/annotate_rules_15.png" src="../_images/annotate_rules_15.png" />
+<figcaption>
+<p><span class="caption-text">Avoid annotating near the boundary of the map.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="annotate-vehicle-drive-directions">
+<h2>Annotate Vehicle Drive Directions<a class="headerlink" href="#annotate-vehicle-drive-directions" title="Link to this heading">#</a></h2>
+<p>The process of annotating vehicle drive directions is similar to annotating pedestrian walk directions, with a few differences:</p>
+<ul class="simple">
+<li><p>Vehicle drive direction splines are <strong>directed</strong>. Therefore, the rotation of the vehicle actors matters. Make sure to adjust the rotation of the vehicle actors to point in the correct driving direction.</p></li>
+<li><p>Instead of the using the human mesh, use a vehicle mesh from the <code class="code docutils literal notranslate"><span class="pre">Content\LychSimData\Meshes</span></code> folder.</p></li>
+<li><p>We annotate both directions of two-way streets by annotating two splines with opposite directions. For one-way streets, only annotate the spline in the allowed driving direction.</p></li>
+<li><p>Inside the notebook, run the vehicle rule block to save the spline information.</p></li>
+</ul>
+<figure class="align-center" id="id12">
+<img alt="../_images/annotate_rules_13.png" src="../_images/annotate_rules_13.png" />
+<figcaption>
+<p><span class="caption-text">Vehicle drive direction splines annotated in the scene.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<img alt="../_images/annotate_rules_14.png" src="../_images/annotate_rules_14.png" />
+<figcaption>
+<p><span class="caption-text">Use more keyframes for curved streets.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="annotate-sidewalk-and-road-areas">
+<h2>Annotate Sidewalk and Road Areas<a class="headerlink" href="#annotate-sidewalk-and-road-areas" title="Link to this heading">#</a></h2>
+<p>Here sidewalk areas don’t need to be exactly “sidewalks” in a city. It could be any area where we can spawn different types of objects, such as pedestrians, benches, trash cans, etc. Similarly, road areas could be any area where we can spawn vehicles. The two types of areas could overlap, <em>e.g.</em>, an empty yard in a farm.</p>
+<p>There are two ways to annotate sidewalk or road areas in the scene:</p>
+<ol class="arabic">
+<li><p><strong>By selecting existing area actors.</strong> In some scenes, there are existing area actors that we can use to annotate sidewalk or road areas. Simply select these area actors in the scene.</p>
+<figure class="align-center" id="id14">
+<img alt="../_images/annotate_rules_16.png" src="../_images/annotate_rules_16.png" />
+<figcaption>
+<p><span class="caption-text">Select existing area actors to annotate sidewalk or road areas.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another trick is to use the search bar in the World Outliner panel to quickly locate area actors. For instance, you can search for <code class="code docutils literal notranslate"><span class="pre">sidewalk</span></code> or <code class="code docutils literal notranslate"><span class="pre">road</span></code> to find relevant area actors. However, manually check the selection to make sure there are no false positives or negatives.</p>
+<figure class="align-center" id="id15">
+<img alt="../_images/annotate_rules_17.png" src="../_images/annotate_rules_17.png" />
+<figcaption>
+<p><span class="caption-text">Use the search bar to find existing area actors.</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>By creating new area actors.</strong> In some other scenes, you may need to create new area actors to represent sidewalk or road areas. This is because the ground plane may be a huge mesh so we cannot specify which parts belong to the sidewalk or road areas.</p>
+<p>To create a new area actor, add a new cube to the scene by clicking on the small cube icon on the top toolbar. In the bottom right transform panel, set the scale of the cube to be <code class="code docutils literal notranslate"><span class="pre">10.0,</span> <span class="pre">10.0,</span> <span class="pre">0.05</span></code>. Adjust the width and length of the cube to cover the sidewalk but keep the height very small.</p>
+<figure class="align-center" id="id16">
+<img alt="../_images/annotate_rules_18.png" src="../_images/annotate_rules_18.png" />
+<figcaption>
+<p><span class="caption-text">Add a new cube to the scene.</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Copy and paste the flat cube to cover all sidewalk or road areas in the scene. Before annotating them as target areas in the notebook, make sure to adjust the height of the cubes so they are about the same height as the ground plane.</p>
+<figure class="align-center" id="id17">
+<img alt="../_images/annotate_rules_19.png" src="../_images/annotate_rules_19.png" />
+<figcaption>
+<p><span class="caption-text">Adjust the height of the cubes to match the ground plane.</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<p>Now run the corresponding blocks in the notebook to save the area information. Note that we are saving sidewalk or road areas as a set of regions. The order of the selection does not matter.</p>
+<p>For some big scenes you don’t have to annotate the complete scenes. However, make sure you have annotated several of the main regions with both sidewalk and road areas.</p>
+<figure class="align-center" id="id18">
+<img alt="../_images/annotate_rules_20.png" src="../_images/annotate_rules_20.png" />
+<figcaption>
+<p><span class="caption-text">Annotated several main regions with sidewalk and road areas.</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="save-the-annotated-procedural-rules">
+<h2>Save the Annotated Procedural Rules<a class="headerlink" href="#save-the-annotated-procedural-rules" title="Link to this heading">#</a></h2>
+<p>The final step is to run the save block in the notebook to save all the annotated procedural rules to files. You should now see a new folder with the scene name with all four types of procedural rules saved as separate files.</p>
+<figure class="align-center" id="id19">
+<img alt="../_images/annotate_rules_21.png" src="../_images/annotate_rules_21.png" />
+<figcaption>
+<p><span class="caption-text">Run the save block in the notebook to save all annotated procedural rules.</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="outdoor_scenes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Outdoor Scenes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linux.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using Unreal Engine and LychSim on Linux Server</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-environment">Set Up Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-this-tutorial">Goal of This Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-pedestrian-walk-directions">Annotate Pedestrian Walk Directions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-vehicle-drive-directions">Annotate Vehicle Drive Directions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotate-sidewalk-and-road-areas">Annotate Sidewalk and Road Areas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-the-annotated-procedural-rules">Save the Annotated Procedural Rules</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+html[data-theme="light"] .highlight .c1 {
+  color: #A62609;
+}
+
+img {
+  margin-bottom: 1.15rem;
+}
+
+.row-odd {
+  background-color: var(--pst-color-background) !important;
+}
+
+a, a:active, a:visited {
+  color: #A90B0B;
+}
+
+html[data-theme=light] {
+  --pst-color-primary: #A90B0B;
+  --pst-color-secondary: #1E30F3;
+}
+
+:root,
+[data-bs-theme="light"] {
+  --bs-font-sans-serif: "Open Sans" !important;
+  --pst-font-family-base-system: var(--bs-font-sans-serif);
+  --pst-font-family-monospace-system: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.bd-footer .bd-footer__inner {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.navbar-header-items__end {
+  padding-right: 2rem;
+}
+
+.bd-content {
+  justify-content: left !important;
+}
+
+.bd-article {
+  padding-left: 0px !important;
+}
+
+.round-img {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0px !important;
+}
+
+.author-name {
+  text-align: center;
+}
+
+.round-figure {
+  margin-bottom: 0px !important;
+}
+
+.sd-d-flex-column {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}

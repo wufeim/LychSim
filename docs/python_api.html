@@ -1,0 +1,1527 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python API Reference &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/python_api';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command-Line Interface" href="cli.html" />
+    <link rel="prev" title="Object API" href="plugin/object_api.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python API Reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-api-reference">
+<h1>Python API Reference<a class="headerlink" href="#python-api-reference" title="Link to this heading">#</a></h1>
+<p>The Python-level entry point is the <a class="reference internal" href="#lychsim.api.LychSim" title="lychsim.api.LychSim"><code class="xref py py-class docutils literal notranslate"><span class="pre">lychsim.api.LychSim</span></code></a> class. It composes three mixins – <a class="reference internal" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin" title="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CameraCommandsMixin</span></code></a>, <a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectCommandsMixin</span></code></a>, and <a class="reference internal" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin" title="lychsim.api.wrapper.data_mixin.DataCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCommandsMixin</span></code></a> – that group the command surface by what it acts on (the camera, an object, or simulation data). Beyond the wrapper, <code class="xref py py-mod docutils literal notranslate"><span class="pre">lychsim.core</span></code> provides serializable bounding-box and scene-graph types, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">lychsim.utils</span></code> collects camera-projection, color, and image helpers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lychsim.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">LychSim</span>
+
+<span class="n">sim</span> <span class="o">=</span> <span class="n">LychSim</span><span class="p">(</span><span class="n">server_name</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1920</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1080</span><span class="p">)</span>
+<span class="n">rgb</span>    <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_cam_lit</span><span class="p">(</span><span class="n">cam_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">annots</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_obj_annots</span><span class="p">()</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="the-lychsim-class">
+<h2>The LychSim Class<a class="headerlink" href="#the-lychsim-class" title="Link to this heading">#</a></h2>
+<p>The user-facing wrapper. Constructing it opens a socket connection to the running UnrealCV / LychSim plugin and resizes camera 0 to the requested film size; <code class="docutils literal notranslate"><span class="pre">close()</span></code> tears the connection back down.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.api.LychSim">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.api.</span></span><span class="sig-name descname"><span class="pre">LychSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">9000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">640</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">480</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.api.LychSim" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin" title="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CameraCommandsMixin</span></code></a>, <a class="reference internal" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin" title="lychsim.api.wrapper.data_mixin.DataCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCommandsMixin</span></code></a>, <a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectCommandsMixin</span></code></a></p>
+<p>High-level Python wrapper for a running LychSim / Unreal Engine instance.</p>
+<p>Composes <code class="xref py py-class docutils literal notranslate"><span class="pre">CameraCommandsMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectCommandsMixin</span></code>, and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">DataCommandsMixin</span></code>, so every camera / object / simulation
+command is available as a method on this single class.</p>
+<p>Constructing an instance opens a socket connection to the UnrealCV +
+LychSim plugin running inside UE; <code class="docutils literal notranslate"><span class="pre">close()</span></code> tears it down. The usual
+pattern is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span> <span class="o">=</span> <span class="n">LychSim</span><span class="p">(</span><span class="n">server_name</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1920</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1080</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_cam_lit</span><span class="p">(</span><span class="n">cam_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.LychSim.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.LychSim.close" title="Link to this definition">#</a></dt>
+<dd><p>Disconnect from the LychSim server and stop the receive thread.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.LychSim.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lychsim.api.LychSim.get_status" title="Link to this definition">#</a></dt>
+<dd><p>Return the C++ status string (server / client info, configuration).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.LychSim.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.LychSim.post_init" title="Link to this definition">#</a></dt>
+<dd><p>Run after <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> to prime per-instance state.</p>
+<p>Sets up the warmup-camera bookkeeping and resizes camera 0 to
+<code class="docutils literal notranslate"><span class="pre">width</span></code> x <code class="docutils literal notranslate"><span class="pre">height</span></code> via <code class="docutils literal notranslate"><span class="pre">lych</span> <span class="pre">cam</span> <span class="pre">set_film_size</span> <span class="pre">0</span> <span class="pre">...</span></code>. If you
+are capturing from a different camera and care about camera 0’s
+existing resolution, leave the constructor’s defaults at the
+running instance’s actual size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.LychSim.print_status">
+<span class="sig-name descname"><span class="pre">print_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lychsim.api.LychSim.print_status" title="Link to this definition">#</a></dt>
+<dd><p>Print the C++ status string (server / client info, configuration).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="camera-commands">
+<h2>Camera Commands<a class="headerlink" href="#camera-commands" title="Link to this heading">#</a></h2>
+<p>Image capture (lit / segmentation / element segmentation / normal / depth / point map / per-object z-buffer), camera pose queries and updates, intrinsics, and per-camera annotations. All methods operate on a single camera identified by <code class="docutils literal notranslate"><span class="pre">cam_id</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> is the default).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.api.wrapper.camera_mixin.</span></span><span class="sig-name descname"><span class="pre">CameraCommandsMixin</span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin" title="Link to this definition">#</a></dt>
+<dd><p>Mixin for camera-related commands.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.clear_annot_comps">
+<span class="sig-name descname"><span class="pre">clear_annot_comps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.clear_annot_comps" title="Link to this definition">#</a></dt>
+<dd><p>Clear cached annotation components on the C++ side.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Raw JSON envelope with <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_annots">
+<span class="sig-name descname"><span class="pre">get_cam_annots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_annots" title="Link to this definition">#</a></dt>
+<dd><p>Get full per-camera annotations (pose, intrinsics, film size).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cam_id</strong> – Camera ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Raw JSON envelope <code class="docutils literal notranslate"><span class="pre">{&quot;status&quot;,</span> <span class="pre">&quot;outputs&quot;:</span> <span class="pre">[...]}</span></code> with the
+requested camera under <code class="docutils literal notranslate"><span class="pre">outputs[0]</span></code>. Fields include
+<code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">rotation</span></code>, <code class="docutils literal notranslate"><span class="pre">fov</span></code>, <code class="docutils literal notranslate"><span class="pre">c2w</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>,
+<code class="docutils literal notranslate"><span class="pre">height</span></code>. Convenience wrappers (<code class="docutils literal notranslate"><span class="pre">get_cam_loc</span></code> etc.)
+return individual fields.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_c2w">
+<span class="sig-name descname"><span class="pre">get_cam_c2w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_c2w" title="Link to this definition">#</a></dt>
+<dd><p>Get camera-to-world transformation matrix.
+:param cam_id: Camera ID.
+:type cam_id: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Camera-to-world transformation matrix.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_depth">
+<span class="sig-name descname"><span class="pre">get_cam_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_depth" title="Link to this definition">#</a></dt>
+<dd><p>Capture a depth map from the given camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cam_id</strong> – Camera ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W)</span></code> with depth in centimeters
+(Unreal world units). Out-of-range / sky pixels read 65500+.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_ele_seg">
+<span class="sig-name descname"><span class="pre">get_cam_ele_seg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_ele_seg" title="Link to this definition">#</a></dt>
+<dd><p>Capture an element-level segmentation map from the given camera.</p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">get_cam_seg</span></code> but at sub-actor granularity (e.g. per
+primitive component within a Blueprint actor).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cam_id</strong> – Camera ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIL <code class="docutils literal notranslate"><span class="pre">Image</span></code> of the element segmentation map (RGB).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_fov">
+<span class="sig-name descname"><span class="pre">get_cam_fov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_fov" title="Link to this definition">#</a></dt>
+<dd><p>Get camera horizontal field of view in degrees.
+:param cam_id: Camera ID.
+:type cam_id: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Horizontal field of view in degrees.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_lit">
+<span class="sig-name descname"><span class="pre">get_cam_lit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experimental</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_lit" title="Link to this definition">#</a></dt>
+<dd><p>Capture a lit RGB image from the given camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_id</strong> – Camera ID.</p></li>
+<li><p><strong>warmup</strong> – Number of extra render frames to issue before the capture.
+Useful when the scene was just modified and TAA / streaming
+still need a few frames to settle. Default 0.</p></li>
+<li><p><strong>experimental</strong> – If True, request the experimental rendering path
+(<code class="docutils literal notranslate"><span class="pre">-experimental</span></code>). Default False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIL <code class="docutils literal notranslate"><span class="pre">Image</span></code> of the camera view (RGB, decoded from PNG).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_loc">
+<span class="sig-name descname"><span class="pre">get_cam_loc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_loc" title="Link to this definition">#</a></dt>
+<dd><p>Get camera location in world space.
+:param cam_id: Camera ID.
+:type cam_id: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Location as [x, y, z] in world space.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_normal">
+<span class="sig-name descname"><span class="pre">get_cam_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_normal" title="Link to this definition">#</a></dt>
+<dd><p>Capture a world-space surface normal map from the given camera.</p>
+<p>Each pixel encodes the surface normal at that hit point in the RGB
+channels (alpha, if present, is dropped).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cam_id</strong> – Camera ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIL <code class="docutils literal notranslate"><span class="pre">Image</span></code> of the normal map (RGB).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_pointmap">
+<span class="sig-name descname"><span class="pre">get_cam_pointmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_pointmap" title="Link to this definition">#</a></dt>
+<dd><p>Get point map in requested spaces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_id</strong> – Camera ID.</p></li>
+<li><p><strong>space</strong> – One of {“camera”, “world”, “opencv”, “all”}; “all” returns all three concatenated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with keys for each requested space. Each value is a float32 array shaped (H, W, 3).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_rot">
+<span class="sig-name descname"><span class="pre">get_cam_rot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_rot" title="Link to this definition">#</a></dt>
+<dd><p>Get camera rotation in world space.
+:param cam_id: Camera ID.
+:type cam_id: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rotation as [pitch, yaw, roll] in degrees.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_seg">
+<span class="sig-name descname"><span class="pre">get_cam_seg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_seg" title="Link to this definition">#</a></dt>
+<dd><p>Capture an instance segmentation map from the given camera.</p>
+<p>Each actor in the scene is painted with a unique color (see
+<code class="docutils literal notranslate"><span class="pre">get_obj_annots</span></code>’s <code class="docutils literal notranslate"><span class="pre">color</span></code> field for the per-object color).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cam_id</strong> – Camera ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIL <code class="docutils literal notranslate"><span class="pre">Image</span></code> of the segmentation map (RGB, decoded from PNG).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_zbuffer">
+<span class="sig-name descname"><span class="pre">get_cam_zbuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_zbuffer" title="Link to this definition">#</a></dt>
+<dd><p>Capture per-object depth (z-buffer) maps from the given camera.</p>
+<p>Returns a stack of 2D depth maps – one per requested object –
+useful for occlusion analysis (compare the z-buffer to the depth
+map to find pixels where the object is occluded by something
+nearer the camera).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_id</strong> – Camera ID.</p></li>
+<li><p><strong>obj_ids</strong> – Object ID, list of object IDs, or <code class="docutils literal notranslate"><span class="pre">None</span></code> /
+empty list for every object in the scene.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">H,</span> <span class="pre">W)</span></code> – one slice per object
+– with depth in centimeters. Pixels not covered by the
+object read 65500+.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.is_cam_pose_invalid">
+<span class="sig-name descname"><span class="pre">is_cam_pose_invalid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius_cm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.is_cam_pose_invalid" title="Link to this definition">#</a></dt>
+<dd><p>Check whether a camera location is in invalid space by overlap testing.
+:param cam_id: Camera ID.
+:type cam_id: int
+:param loc: Location as [x, y, z] in world space.
+:type loc: list | np.ndarray
+:param radius_cm: Safety sphere radius in centimeters. Default is 5.0.
+:type radius_cm: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if pose is invalid (collision/inside), else False.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_loc">
+<span class="sig-name descname"><span class="pre">set_cam_loc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_loc" title="Link to this definition">#</a></dt>
+<dd><p>Set camera location in world space.
+:param cam_id: Camera ID.
+:type cam_id: int
+:param loc: Location as [x, y, z].
+:type loc: list | np.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response envelope with <code class="docutils literal notranslate"><span class="pre">status</span></code> (“ok” or “error”) and
+<code class="docutils literal notranslate"><span class="pre">outputs</span></code> (empty on success). Includes <code class="docutils literal notranslate"><span class="pre">error</span></code> message on failure.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_rot">
+<span class="sig-name descname"><span class="pre">set_cam_rot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_rot" title="Link to this definition">#</a></dt>
+<dd><p>Set camera rotation in world space.
+:param cam_id: Camera ID.
+:type cam_id: int
+:param rot: Rotation as [pitch, yaw, roll] in degrees.
+:type rot: list | np.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response envelope with <code class="docutils literal notranslate"><span class="pre">status</span></code> (“ok” or “error”) and
+<code class="docutils literal notranslate"><span class="pre">outputs</span></code> (empty on success). Includes <code class="docutils literal notranslate"><span class="pre">error</span></code> message on failure.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.warmup_cam">
+<span class="sig-name descname"><span class="pre">warmup_cam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.warmup_cam" title="Link to this definition">#</a></dt>
+<dd><p>Issue <code class="docutils literal notranslate"><span class="pre">num_steps</span></code> no-op render frames to let the camera settle.</p>
+<p>Useful when temporal anti-aliasing or texture streaming would
+otherwise produce a blurry / under-streamed first capture. Cheaper
+than scattering <code class="docutils literal notranslate"><span class="pre">warmup=</span></code> arguments across multiple calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_id</strong> – Camera ID.</p></li>
+<li><p><strong>num_steps</strong> – Number of render frames to issue. Default 10.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="object-commands">
+<h2>Object Commands<a class="headerlink" href="#object-commands" title="Link to this heading">#</a></h2>
+<p>Scene queries and manipulation: list / spawn / delete actors, query bounding boxes (AABB / OBB / bounds), update locations and rotations, fetch per-object semantic and pose annotations, render per-object masks. Object IDs match the Unreal actor labels seen in <a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_list" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_list"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_obj_list()</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.api.wrapper.object_mixin.</span></span><span class="sig-name descname"><span class="pre">ObjectCommandsMixin</span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin" title="Link to this definition">#</a></dt>
+<dd><p>Mixin for object-related commands.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.add_obj">
+<span class="sig-name descname"><span class="pre">add_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_if_colliding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust_if_possible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.add_obj" title="Link to this definition">#</a></dt>
+<dd><p>Spawn a new actor in the running scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – ID to assign to the new actor (must be unique).</p></li>
+<li><p><strong>obj_path</strong> – Unreal asset content path to spawn, e.g.
+<code class="docutils literal notranslate"><span class="pre">/Game/HousePropsFurniture/Blueprints/BP_Toilet.BP_Toilet</span></code>.</p></li>
+<li><p><strong>loc</strong> – Spawn location <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> in cm.</p></li>
+<li><p><strong>rot</strong> – Spawn rotation <code class="docutils literal notranslate"><span class="pre">[pitch,</span> <span class="pre">yaw,</span> <span class="pre">roll]</span></code> in degrees.</p></li>
+<li><p><strong>scale</strong> – Uniform scale factor. Default 1.0.</p></li>
+<li><p><strong>skip_if_colliding</strong> – If True, abort the spawn when the actor
+would overlap an existing one. Mutually exclusive with
+<code class="docutils literal notranslate"><span class="pre">adjust_if_possible</span></code>.</p></li>
+<li><p><strong>adjust_if_possible</strong> – If True, nudge the spawn location to
+resolve collisions instead of aborting.</p></li>
+<li><p><strong>lock_rotation</strong> – If True, freeze the actor’s rotation against
+physics so it doesn’t tip / spin under gravity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Raw JSON envelope describing the spawn outcome.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – If <code class="docutils literal notranslate"><span class="pre">skip_if_colliding</span></code> and
+    <code class="docutils literal notranslate"><span class="pre">adjust_if_possible</span></code> are both True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.adjust_light">
+<span class="sig-name descname"><span class="pre">adjust_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.adjust_light" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.del_obj">
+<span class="sig-name descname"><span class="pre">del_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.del_obj" title="Link to this definition">#</a></dt>
+<dd><p>Delete an actor from the running scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – Object ID of the actor to remove.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.export_meshes">
+<span class="sig-name descname"><span class="pre">export_meshes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glb_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_extras</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.export_meshes" title="Link to this definition">#</a></dt>
+<dd><p>Export static meshes under the given content path to glTF and glb files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_path</strong> – Content path to scan, e.g. /Game/AIUE5_vol8_01/Mesh.</p></li>
+<li><p><strong>output_dir</strong> – Destination directory for exported files.</p></li>
+<li><p><strong>max_count</strong> – Limit number of meshes to export (useful for testing).</p></li>
+<li><p><strong>recursive</strong> – Whether to search subfolders.</p></li>
+<li><p><strong>glb_only</strong> – If True, only export .glb and skip .gltf.</p></li>
+<li><p><strong>keep_extras</strong> – If False, will remove ancillary files (bin/png) after export when gltf is produced.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_mesh_extent">
+<span class="sig-name descname"><span class="pre">get_mesh_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_mesh_extent" title="Link to this definition">#</a></dt>
+<dd><p>Get an actor’s static-mesh extent (half-sizes from the asset).</p>
+<p>This reads from the underlying static-mesh asset rather than the
+spawned actor bounds, so it is independent of pose and ignores
+any blueprint-time scaling. Useful for sizing-driven sampling
+decisions before placement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – Object ID, or list of object IDs.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Raw JSON envelope <code class="docutils literal notranslate"><span class="pre">{&quot;status&quot;,</span> <span class="pre">&quot;outputs&quot;:</span> <span class="pre">[...]}</span></code> where each
+output carries the asset-space half-extents.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the C++ response is not parseable JSON.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_aabb">
+<span class="sig-name descname"><span class="pre">get_obj_aabb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_aabb" title="Link to this definition">#</a></dt>
+<dd><p>Get the world-space axis-aligned bounding box for one or all objects.</p>
+<p>Backed by <code class="docutils literal notranslate"><span class="pre">FActorController::GetAxisAlignedBoundingBox()</span></code>, which
+typically reflects the root / collision component only – and so
+understates Blueprint composites with non-colliding visual meshes.
+For visual alignment (e.g. computing spawn offsets), prefer
+<a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_obj_obb()</span></code></a>, which aggregates every primitive component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – Object ID, or <code class="docutils literal notranslate"><span class="pre">None</span></code> for every object in the scene.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Raw JSON envelope <code class="docutils literal notranslate"><span class="pre">{&quot;status&quot;,</span> <span class="pre">&quot;outputs&quot;:</span> <span class="pre">[...]}</span></code> where each
+output carries <code class="docutils literal notranslate"><span class="pre">aabb</span></code>, <code class="docutils literal notranslate"><span class="pre">obb</span></code>, <code class="docutils literal notranslate"><span class="pre">bounds</span></code>, <code class="docutils literal notranslate"><span class="pre">bounds_tight</span></code>
+and pose / scale / color metadata.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_annots">
+<span class="sig-name descname"><span class="pre">get_obj_annots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_annots" title="Link to this definition">#</a></dt>
+<dd><p>Get the full annotation record for one or more objects.</p>
+<p>This is the workhorse query for scene state – it returns
+everything the C++ side knows about each requested actor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – A single object ID, a list of object IDs, or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+to query every object in the scene.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Raw JSON envelope <code class="docutils literal notranslate"><span class="pre">{&quot;status&quot;,</span> <span class="pre">&quot;outputs&quot;:</span> <span class="pre">[...]}</span></code> where each
+output entry contains <code class="docutils literal notranslate"><span class="pre">object_id</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">guid</span></code>,
+<code class="docutils literal notranslate"><span class="pre">aabb</span></code> / <code class="docutils literal notranslate"><span class="pre">obb</span></code> / <code class="docutils literal notranslate"><span class="pre">bounds</span></code> / <code class="docutils literal notranslate"><span class="pre">bounds_tight</span></code> (each with
+<code class="docutils literal notranslate"><span class="pre">center</span></code> and <code class="docutils literal notranslate"><span class="pre">extent</span></code>; OBB also has <code class="docutils literal notranslate"><span class="pre">rotation</span></code>),
+<code class="docutils literal notranslate"><span class="pre">location</span></code> (cm), <code class="docutils literal notranslate"><span class="pre">rotation</span></code> (deg), <code class="docutils literal notranslate"><span class="pre">scale</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">color</span></code> (the 4-channel segmentation color used by
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">get_cam_seg()</span></code>). Locations are in Unreal world
+coordinates (centimeters, left-handed, Z-up); rotations are
+<code class="docutils literal notranslate"><span class="pre">[pitch,</span> <span class="pre">yaw,</span> <span class="pre">roll]</span></code> in degrees.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the C++ response is not parseable JSON.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_list">
+<span class="sig-name descname"><span class="pre">get_obj_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_list" title="Link to this definition">#</a></dt>
+<dd><p>List every actor ID currently in the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of object IDs (Unreal actor labels), one per actor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_loc">
+<span class="sig-name descname"><span class="pre">get_obj_loc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_loc" title="Link to this definition">#</a></dt>
+<dd><p>Get object world locations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – A single object ID, a list of object IDs, or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+to query every object in the scene.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The raw JSON from the C++ handler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span> <span class="o">|</span> <span class="s2">&quot;partial&quot;</span> <span class="o">|</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span>  <span class="s2">&quot;&lt;readable message&gt;&quot;</span><span class="p">,</span>   <span class="c1"># only when status != &quot;ok&quot;</span>
+    <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+         <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span> <span class="o">|</span> <span class="s2">&quot;not_found&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]},</span>      <span class="c1"># omitted on not_found</span>
+        <span class="o">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Top-level <code class="docutils literal notranslate"><span class="pre">status</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;ok&quot;</span></code> when every requested object
+resolved, <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code> when none did, and <code class="docutils literal notranslate"><span class="pre">&quot;partial&quot;</span></code> for a
+mix. Locations are in Unreal world coordinates (centimeters,
+left-handed, Z-up).</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_mask">
+<span class="sig-name descname"><span class="pre">get_obj_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_mask" title="Link to this definition">#</a></dt>
+<dd><p>Get object mask(s) from a specific camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_id</strong> – Camera ID.</p></li>
+<li><p><strong>obj_id</strong> – If specified, get the mask for this object. If a list of object IDs
+is provided, get the masks for these objects. If None, get the mask for
+all visible objects.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of object masks.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb">
+<span class="sig-name descname"><span class="pre">get_obj_obb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb" title="Link to this definition">#</a></dt>
+<dd><p>Get the world-space oriented bounding box for an object.</p>
+<p>Backed by <code class="docutils literal notranslate"><span class="pre">Actor-&gt;GetActorBounds(false,</span> <span class="pre">...)</span></code>, which aggregates
+all registered primitive components (including non-colliding
+visual meshes). This is the right bbox flavor for visual
+alignment such as bottom-center spawn-offset computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – Object ID.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the
+first is shape <code class="docutils literal notranslate"><span class="pre">(3,)</span></code> in world cm; the second packs the
+half-sizes followed by the rotation as returned by the
+C++ handler.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple <code class="docutils literal notranslate"><span class="pre">(center,</span> <span class="pre">extent_rotation)</span></code> of <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_rot">
+<span class="sig-name descname"><span class="pre">get_obj_rot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_rot" title="Link to this definition">#</a></dt>
+<dd><p>Get object world rotations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – A single object ID, a list of object IDs, or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+to query every object in the scene.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The raw JSON from the C++ handler, using the same shape as
+<a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_loc" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_loc"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_obj_loc()</span></code></a> but with a <code class="docutils literal notranslate"><span class="pre">&quot;rotation&quot;:</span> <span class="pre">[pitch,</span> <span class="pre">yaw,</span>
+<span class="pre">roll]</span></code> field (degrees) instead of <code class="docutils literal notranslate"><span class="pre">&quot;location&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span> <span class="o">|</span> <span class="s2">&quot;partial&quot;</span> <span class="o">|</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;error&quot;</span><span class="p">:</span>  <span class="s2">&quot;&lt;readable message&gt;&quot;</span><span class="p">,</span>   <span class="c1"># only when status != &quot;ok&quot;</span>
+    <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+         <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span> <span class="o">|</span> <span class="s2">&quot;not_found&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;rotation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">roll</span><span class="p">]},</span>  <span class="c1"># omitted on not_found</span>
+        <span class="o">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.list_selected">
+<span class="sig-name descname"><span class="pre">list_selected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.list_selected" title="Link to this definition">#</a></dt>
+<dd><p>Return the actors currently selected in the Unreal editor.</p>
+<p>Useful when authoring in the editor and you want to round-trip a
+selection into Python.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Raw JSON envelope with selected object IDs under <code class="docutils literal notranslate"><span class="pre">outputs</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.update_obj">
+<span class="sig-name descname"><span class="pre">update_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.update_obj" title="Link to this definition">#</a></dt>
+<dd><p>Update an existing actor’s location and/or rotation in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – Object ID of an actor already in the scene.</p></li>
+<li><p><strong>loc</strong> – New world-space <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> in cm. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the
+current location is preserved.</p></li>
+<li><p><strong>rot</strong> – New <code class="docutils literal notranslate"><span class="pre">[pitch,</span> <span class="pre">yaw,</span> <span class="pre">roll]</span></code> in degrees. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the
+current rotation is preserved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If both <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">rot</span></code> are <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="data-commands">
+<h2>Data Commands<a class="headerlink" href="#data-commands" title="Link to this heading">#</a></h2>
+<p>Simulation-state control (pause / resume) and debug-line drawing. Use <a class="reference internal" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.pause" title="lychsim.api.wrapper.data_mixin.DataCommandsMixin.pause"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pause()</span></code></a> before reading scene state when physics or animations would otherwise drift between requests.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.api.wrapper.data_mixin.</span></span><span class="sig-name descname"><span class="pre">DataCommandsMixin</span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin" title="Link to this definition">#</a></dt>
+<dd><p>Mixin for data-related commands.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin.clear_debug_lines">
+<span class="sig-name descname"><span class="pre">clear_debug_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.clear_debug_lines" title="Link to this definition">#</a></dt>
+<dd><p>Clear all debug lines.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line">
+<span class="sig-name descname"><span class="pre">draw_debug_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'green'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line" title="Link to this definition">#</a></dt>
+<dd><p>Draw a debug line connecting the center of a list of objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object_ids</strong> – List of object IDs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line_pts">
+<span class="sig-name descname"><span class="pre">draw_debug_line_pts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'green'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line_pts" title="Link to this definition">#</a></dt>
+<dd><p>Draw a debug line connecting a list of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>points</strong> – List of points, each point is a list of 3 floats.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.pause" title="Link to this definition">#</a></dt>
+<dd><p>Pause the simulation – freezes physics, animations, and actor ticks.</p>
+<p>Calls <code class="docutils literal notranslate"><span class="pre">lych</span> <span class="pre">data</span> <span class="pre">pause</span></code>. Useful for taking deterministic snapshots
+before reading camera/object state. Pair with <a class="reference internal" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.resume" title="lychsim.api.wrapper.data_mixin.DataCommandsMixin.resume"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resume()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.api.wrapper.data_mixin.DataCommandsMixin.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.resume" title="Link to this definition">#</a></dt>
+<dd><p>Resume a previously paused simulation. Calls <code class="docutils literal notranslate"><span class="pre">lych</span> <span class="pre">data</span> <span class="pre">unpause</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bounding-boxes">
+<h2>Bounding Boxes<a class="headerlink" href="#bounding-boxes" title="Link to this heading">#</a></h2>
+<p>Serializable axis-aligned and oriented bounding-box types, plus a corner-construction helper. These are produced by <a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_aabb" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_aabb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_obj_aabb()</span></code></a> / <a class="reference internal" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb" title="lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_obj_obb()</span></code></a> and consumed by downstream collision / sampling code.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.AABB">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">AABB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.AABB" title="Link to this definition">#</a></dt>
+<dd><p>Axis-aligned bounding box represented by a center, half-extents, and a translation.</p>
+<p>The box is defined in a local frame by <code class="docutils literal notranslate"><span class="pre">center</span> <span class="pre">+/-</span> <span class="pre">extent</span></code>, then
+shifted into world space by <code class="docutils literal notranslate"><span class="pre">translation</span></code>. Use <a class="reference internal" href="#lychsim.core.AABB.corners" title="lychsim.core.AABB.corners"><code class="xref py py-attr docutils literal notranslate"><span class="pre">AABB.corners</span></code></a> to
+materialize the eight world-space corner points.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="lychsim.core.AABB.corners">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">corners</span></span><a class="headerlink" href="#lychsim.core.AABB.corners" title="Link to this definition">#</a></dt>
+<dd><p>Returns the corners of the AABB.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.AABB.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.AABB.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the AABB.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.OBB">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">OBB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.OBB" title="Link to this definition">#</a></dt>
+<dd><p>Oriented bounding box: an <a class="reference internal" href="#lychsim.core.AABB" title="lychsim.core.AABB"><code class="xref py py-class docutils literal notranslate"><span class="pre">AABB</span></code></a> plus a 3x3 rotation matrix.</p>
+<p>The box is defined in a local frame by <code class="docutils literal notranslate"><span class="pre">center</span> <span class="pre">+/-</span> <span class="pre">extent</span></code>,
+rotated by <code class="docutils literal notranslate"><span class="pre">rotation</span></code>, then translated into world space by
+<code class="docutils literal notranslate"><span class="pre">translation</span></code>. <a class="reference internal" href="#lychsim.core.OBB.corners" title="lychsim.core.OBB.corners"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OBB.corners</span></code></a> returns the eight world-space
+corners with the rotation applied.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="lychsim.core.OBB.corners">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">corners</span></span><a class="headerlink" href="#lychsim.core.OBB.corners" title="Link to this definition">#</a></dt>
+<dd><p>Returns the corners of the OBB.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.OBB.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.OBB.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the AABB.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lychsim.core.bbox.get_corners">
+<span class="sig-prename descclassname"><span class="pre">lychsim.core.bbox.</span></span><span class="sig-name descname"><span class="pre">get_corners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.bbox.get_corners" title="Link to this definition">#</a></dt>
+<dd><p>Return the eight corners of a 3D box defined by min / max points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_pt</strong> – <code class="docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min,</span> <span class="pre">z_min)</span></code> – the box’s minimum corner.</p></li>
+<li><p><strong>max_pt</strong> – <code class="docutils literal notranslate"><span class="pre">(x_max,</span> <span class="pre">y_max,</span> <span class="pre">z_max)</span></code> – the box’s maximum corner.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(8,</span> <span class="pre">3)</span></code> listing the corners. The first
+four are the bottom face (<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z_min</span></code>), going counter-clockwise
+from <code class="docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min,</span> <span class="pre">z_min)</span></code>; the last four are the top face,
+in matching order.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="scene-graph">
+<h2>Scene Graph<a class="headerlink" href="#scene-graph" title="Link to this heading">#</a></h2>
+<p>A scene is a hierarchy of <code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticScene</span></code> -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticLevel</span></code> -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticRegion</span></code> -&gt; <code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code>. Each level holds a list of regions and aggregates objects from its children; serialization is supported via <code class="docutils literal notranslate"><span class="pre">to_dict</span></code> / <code class="docutils literal notranslate"><span class="pre">from_dict</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticScene</span></code> additionally loads from <code class="docutils literal notranslate"><span class="pre">.npz</span></code> via <code class="xref py py-meth docutils literal notranslate"><span class="pre">SemanticScene.from_npz()</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.Object">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">Object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lychsim.core.OBB" title="lychsim.core.bbox.OBB"><span class="pre">OBB</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.Object" title="Link to this definition">#</a></dt>
+<dd><p>A scene-graph leaf node: a named, uniquely-identified object with an oriented bounding box.</p>
+<p>These are the leaves under <a class="reference internal" href="#lychsim.core.SemanticRegion" title="lychsim.core.SemanticRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticRegion</span></code></a>. The
+<code class="docutils literal notranslate"><span class="pre">obb</span></code> field carries the world-space pose and extent.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.Object.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.Object.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the Object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.SemanticRegion">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">SemanticRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lychsim.core.Object" title="lychsim.core.object.Object"><span class="pre">Object</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Polygon</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lychsim.core.OBB" title="lychsim.core.bbox.OBB"><span class="pre">OBB</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticRegion" title="Link to this definition">#</a></dt>
+<dd><p>A named region within a <a class="reference internal" href="#lychsim.core.SemanticLevel" title="lychsim.core.SemanticLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticLevel</span></code></a> – e.g. <code class="docutils literal notranslate"><span class="pre">&quot;kitchen&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;sidewalk_segment_3&quot;</span></code>.</p>
+<p>A region carries a 2D footprint (<code class="docutils literal notranslate"><span class="pre">polygon</span></code>), a 3D bounding box
+(<code class="docutils literal notranslate"><span class="pre">obb</span></code>), and a list of <a class="reference internal" href="#lychsim.core.Object" title="lychsim.core.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a> instances
+placed inside it.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticRegion.get_all_objects">
+<span class="sig-name descname"><span class="pre">get_all_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticRegion.get_all_objects" title="Link to this definition">#</a></dt>
+<dd><p>Returns the list of objects in the region.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticRegion.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticRegion.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the SemanticRegion.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.SemanticLevel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">SemanticLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lychsim.core.SemanticRegion" title="lychsim.core.scene.scene.SemanticRegion"><span class="pre">SemanticRegion</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticLevel" title="Link to this definition">#</a></dt>
+<dd><p>A floor / story within a <a class="reference internal" href="#lychsim.core.SemanticScene" title="lychsim.core.SemanticScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticScene</span></code></a>.</p>
+<p>A level is a flat collection of <a class="reference internal" href="#lychsim.core.SemanticRegion" title="lychsim.core.SemanticRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticRegion</span></code></a> instances; it
+aggregates the objects in each region for convenience.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticLevel.get_all_objects">
+<span class="sig-name descname"><span class="pre">get_all_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticLevel.get_all_objects" title="Link to this definition">#</a></dt>
+<dd><p>Returns the list of objects in the level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticLevel.get_all_regions">
+<span class="sig-name descname"><span class="pre">get_all_regions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticLevel.get_all_regions" title="Link to this definition">#</a></dt>
+<dd><p>Returns the list of regions in the level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticLevel.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticLevel.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the SemanticLevel.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lychsim.core.SemanticScene">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lychsim.core.</span></span><span class="sig-name descname"><span class="pre">SemanticScene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lychsim.core.SemanticLevel" title="lychsim.core.scene.scene.SemanticLevel"><span class="pre">SemanticLevel</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticScene" title="Link to this definition">#</a></dt>
+<dd><p>Top-level scene graph: a hierarchy of levels, regions, and objects.</p>
+<p>The hierarchy is <a class="reference internal" href="#lychsim.core.SemanticScene" title="lychsim.core.SemanticScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticScene</span></code></a> -&gt; <a class="reference internal" href="#lychsim.core.SemanticLevel" title="lychsim.core.SemanticLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticLevel</span></code></a> -&gt;
+<a class="reference internal" href="#lychsim.core.SemanticRegion" title="lychsim.core.SemanticRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">SemanticRegion</span></code></a> -&gt; <a class="reference internal" href="#lychsim.core.Object" title="lychsim.core.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a>. Use
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">from_npz()</span></code> to load a serialized scene from disk and
+<a class="reference internal" href="#lychsim.core.SemanticScene.get_all_objects" title="lychsim.core.SemanticScene.get_all_objects"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_all_objects()</span></code></a> / <a class="reference internal" href="#lychsim.core.SemanticScene.get_all_regions" title="lychsim.core.SemanticScene.get_all_regions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_all_regions()</span></code></a> to flatten it.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticScene.get_all_objects">
+<span class="sig-name descname"><span class="pre">get_all_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticScene.get_all_objects" title="Link to this definition">#</a></dt>
+<dd><p>Returns the list of objects in the scene.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticScene.get_all_regions">
+<span class="sig-name descname"><span class="pre">get_all_regions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticScene.get_all_regions" title="Link to this definition">#</a></dt>
+<dd><p>Returns the list of regions in the scene.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lychsim.core.SemanticScene.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.core.SemanticScene.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Returns a dictionary representation of the SemanticScene.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="camera-projection">
+<h2>Camera Projection<a class="headerlink" href="#camera-projection" title="Link to this heading">#</a></h2>
+<p>3D bounding-box corner / edge construction, world &lt;-&gt; camera transforms, and intrinsics-based projection helpers used to back-project depth maps and project bounding boxes into image space.</p>
+<dl class="py function" id="module-lychsim.utils.camera_projection_utils">
+<dt class="sig sig-object py" id="lychsim.utils.camera_projection_utils.get_bbox3d">
+<span class="sig-prename descclassname"><span class="pre">lychsim.utils.camera_projection_utils.</span></span><span class="sig-name descname"><span class="pre">get_bbox3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.utils.camera_projection_utils.get_bbox3d" title="Link to this definition">#</a></dt>
+<dd><p>Get 3D bounding box corners and edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>np.ndarray</em>) – Center of the bounding box (3,).</p></li>
+<li><p><strong>extent</strong> (<em>np.ndarray</em>) – Extent of the bounding box (3,).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>3D bounding box corners (8, 3).
+edges (np.ndarray): 3D bounding box edges (12, 2).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lychsim.core.AABB.corners" title="lychsim.core.AABB.corners">corners</a> (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lychsim.utils.camera_projection_utils.project_3d_to_2d">
+<span class="sig-prename descclassname"><span class="pre">lychsim.utils.camera_projection_utils.</span></span><span class="sig-name descname"><span class="pre">project_3d_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">corners</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c2w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.utils.camera_projection_utils.project_3d_to_2d" title="Link to this definition">#</a></dt>
+<dd><p>Project 3D points to 2D image plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>corners</strong> (<em>np.ndarray</em>) – 3D points (N, 3).</p></li>
+<li><p><strong>c2w</strong> (<em>np.ndarray</em>) – Camera-to-world transformation matrix (4, 4).</p></li>
+<li><p><strong>fov</strong> (<em>float</em>) – Horizontal field of view in degrees.</p></li>
+<li><p><strong>W</strong> (<em>int</em>) – Image width.</p></li>
+<li><p><strong>H</strong> (<em>int</em>) – Image height.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>2D projected points (N, 2).
+in_front (np.ndarray): Boolean mask indicating if points are in front of the camera (N,).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>uv (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lychsim.utils.camera_projection_utils.rot_mat">
+<span class="sig-prename descclassname"><span class="pre">lychsim.utils.camera_projection_utils.</span></span><span class="sig-name descname"><span class="pre">rot_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.utils.camera_projection_utils.rot_mat" title="Link to this definition">#</a></dt>
+<dd><p>Convert rotation from (XZY) Euler angles in degrees to rotation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rotation</strong> (<em>list</em><em> or </em><em>np.ndarray</em>) – Rotation angles in degrees [rx, ry, rz].</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rotation matrix (3, 3).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="colors">
+<h2>Colors<a class="headerlink" href="#colors" title="Link to this heading">#</a></h2>
+<p>Pre-baked categorical colormaps in three formats (<code class="xref py py-data docutils literal notranslate"><span class="pre">COLORMAPS_INT</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">COLORMAPS_FLOAT</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">COLORMAPS_HEX</span></code>) for visualizing object masks and bounding boxes.</p>
+</section>
+<section id="image-helpers">
+<span id="module-lychsim.utils.colors"></span><h2>Image Helpers<a class="headerlink" href="#image-helpers" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lychsim.utils.general.rgbd2rgb">
+<span class="sig-prename descclassname"><span class="pre">lychsim.utils.general.</span></span><span class="sig-name descname"><span class="pre">rgbd2rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'white'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lychsim.utils.general.rgbd2rgb" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plugin/object_api.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Object API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cli.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Command-Line Interface</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lychsim-class">The LychSim Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.LychSim"><code class="docutils literal notranslate"><span class="pre">LychSim</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.LychSim.close"><code class="docutils literal notranslate"><span class="pre">LychSim.close()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.LychSim.get_status"><code class="docutils literal notranslate"><span class="pre">LychSim.get_status()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.LychSim.post_init"><code class="docutils literal notranslate"><span class="pre">LychSim.post_init()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.LychSim.print_status"><code class="docutils literal notranslate"><span class="pre">LychSim.print_status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-commands">Camera Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.clear_annot_comps"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.clear_annot_comps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_annots"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_annots()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_c2w"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_c2w()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_depth"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_depth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_ele_seg"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_ele_seg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_fov"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_fov()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_lit"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_lit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_loc"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_loc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_normal"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_normal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_pointmap"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_pointmap()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_rot"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_rot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_seg"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_seg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.get_cam_zbuffer"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.get_cam_zbuffer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.is_cam_pose_invalid"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.is_cam_pose_invalid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_loc"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.set_cam_loc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.set_cam_rot"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.set_cam_rot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.camera_mixin.CameraCommandsMixin.warmup_cam"><code class="docutils literal notranslate"><span class="pre">CameraCommandsMixin.warmup_cam()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-commands">Object Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.add_obj"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.add_obj()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.adjust_light"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.adjust_light()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.del_obj"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.del_obj()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.export_meshes"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.export_meshes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_mesh_extent"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_mesh_extent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_aabb"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_aabb()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_annots"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_annots()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_list"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_list()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_loc"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_loc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_mask"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_mask()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_obb"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_obb()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.get_obj_rot"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.get_obj_rot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.list_selected"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.list_selected()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.object_mixin.ObjectCommandsMixin.update_obj"><code class="docutils literal notranslate"><span class="pre">ObjectCommandsMixin.update_obj()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-commands">Data Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.clear_debug_lines"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin.clear_debug_lines()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin.draw_debug_line()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.draw_debug_line_pts"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin.draw_debug_line_pts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.pause"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin.pause()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.api.wrapper.data_mixin.DataCommandsMixin.resume"><code class="docutils literal notranslate"><span class="pre">DataCommandsMixin.resume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-boxes">Bounding Boxes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.AABB"><code class="docutils literal notranslate"><span class="pre">AABB</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.AABB.corners"><code class="docutils literal notranslate"><span class="pre">AABB.corners</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.AABB.to_dict"><code class="docutils literal notranslate"><span class="pre">AABB.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.OBB"><code class="docutils literal notranslate"><span class="pre">OBB</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.OBB.corners"><code class="docutils literal notranslate"><span class="pre">OBB.corners</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.OBB.to_dict"><code class="docutils literal notranslate"><span class="pre">OBB.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.bbox.get_corners"><code class="docutils literal notranslate"><span class="pre">get_corners()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scene-graph">Scene Graph</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.Object"><code class="docutils literal notranslate"><span class="pre">Object</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.Object.to_dict"><code class="docutils literal notranslate"><span class="pre">Object.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticRegion"><code class="docutils literal notranslate"><span class="pre">SemanticRegion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticRegion.get_all_objects"><code class="docutils literal notranslate"><span class="pre">SemanticRegion.get_all_objects()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticRegion.to_dict"><code class="docutils literal notranslate"><span class="pre">SemanticRegion.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticLevel"><code class="docutils literal notranslate"><span class="pre">SemanticLevel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticLevel.get_all_objects"><code class="docutils literal notranslate"><span class="pre">SemanticLevel.get_all_objects()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticLevel.get_all_regions"><code class="docutils literal notranslate"><span class="pre">SemanticLevel.get_all_regions()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticLevel.to_dict"><code class="docutils literal notranslate"><span class="pre">SemanticLevel.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticScene"><code class="docutils literal notranslate"><span class="pre">SemanticScene</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticScene.get_all_objects"><code class="docutils literal notranslate"><span class="pre">SemanticScene.get_all_objects()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticScene.get_all_regions"><code class="docutils literal notranslate"><span class="pre">SemanticScene.get_all_regions()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.core.SemanticScene.to_dict"><code class="docutils literal notranslate"><span class="pre">SemanticScene.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-projection">Camera Projection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.utils.camera_projection_utils.get_bbox3d"><code class="docutils literal notranslate"><span class="pre">get_bbox3d()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.utils.camera_projection_utils.project_3d_to_2d"><code class="docutils literal notranslate"><span class="pre">project_3d_to_2d()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.utils.camera_projection_utils.rot_mat"><code class="docutils literal notranslate"><span class="pre">rot_mat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colors">Colors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-helpers">Image Helpers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lychsim.utils.general.rgbd2rgb"><code class="docutils literal notranslate"><span class="pre">rgbd2rgb()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

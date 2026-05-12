@@ -1,0 +1,46 @@
+.ul {
+    text-decoration: underline;
+}
+
+.bul {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.blue-bul {
+    text-decoration: underline;
+    font-weight: 500;
+    color: #2196f3;
+}
+
+.fig-mw-200 {
+    max-width: 200px !important;
+}
+
+.fig-mw-300 {
+    max-width: 300px !important;
+}
+
+.fig-mw-400 {
+    max-width: 400px !important;
+}
+
+.fig-mw-500 {
+    max-width: 500px !important;
+}
+
+.fig-mw-600 {
+    max-width: 600px !important;
+}
+
+.fig-mw-700 {
+    max-width: 700px !important;
+}
+
+.fig-mw-800 {
+    max-width: 800px !important;
+}
+
+.fig-mw-900 {
+    max-width: 900px !important;
+}

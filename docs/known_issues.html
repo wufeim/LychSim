@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Troubleshooting &#8212; LychSim</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mybadges.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=247cb61c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=bbaff89e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mybadges.css?v=00cc205e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/custom.js?v=958ca6b1"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/known_issues';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Camera Lit Capture Parameters" href="camera_lit_params.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width" style="padding: 0px;">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start" style="padding-left: 2rem;">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lychee.png" class="logo__image only-light" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="" style="height: 30px !important; margin-bottom: 0px;"/>
+  
+  
+    <p class="title logo__title" style="color: #A90B0B; font-weight: bold;">LychSim</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width container-xxl">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide col-lg-3">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intro.html" target="_self">
+    Features
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html" target="_self">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html" target="_self">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://lychsim.github.io/" target="_blank">
+    Project Page
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/wufeim/LychSim" target="_blank">
+    GitHub
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-placeholder" style="visibility: hidden;">
+          <p>placeholder</p>
+        </div>
+      </div>
+      
+      <main id="main-content" class="col-lg-9 bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Troubleshooting</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h1>
+<section id="artifacts-and-low-quality-rendering-with-lumen">
+<h2>1. Artifacts and low-quality rendering with Lumen<a class="headerlink" href="#artifacts-and-low-quality-rendering-with-lumen" title="Link to this heading">#</a></h2>
+<p>Current <code class="code docutils literal notranslate"><span class="pre">LychSim</span></code> implementation may not fully support Lumen features and may exhibit artifacts or lower quality rendering compared to native Lumen.</p>
+<p><strong>Fix.</strong> This should be fixed now. Please submit an issue if the problem persists.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/lumen.png" src="../_images/lumen.png" />
+<figcaption>
+<p><span class="caption-text">Artifacts and low-quality rendering with Lumen.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cannot-connect-to-ue5">
+<h2>2. Cannot connect to UE5<a class="headerlink" href="#cannot-connect-to-ue5" title="Link to this heading">#</a></h2>
+<p>This issue may arise when the default port, <em>i.e.</em>, 9000, is blocked or in use by another process. This is often caused by previously uncleaned instances of the server or other applications occupying the same port.</p>
+<p><strong>Fix.</strong> Run <code class="code docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-ano</span> <span class="pre">|</span> <span class="pre">findstr</span> <span class="pre">:9000</span></code> to check for unwanted processes. Then kill these processes using <code class="code docutils literal notranslate"><span class="pre">taskkill</span> <span class="pre">/PID</span> <span class="pre">&lt;pid&gt;</span> <span class="pre">/F</span></code>.</p>
+</section>
+<section id="platform-mac-is-not-a-valid-platform-to-build">
+<h2>3. Platform Mac is not a valid platform to build<a class="headerlink" href="#platform-mac-is-not-a-valid-platform-to-build" title="Link to this heading">#</a></h2>
+<p>This issue may arise when using an un-supported Xcode version.</p>
+<figure class="align-default" id="id2">
+<img alt="../_images/macos_build.png" src="../_images/macos_build.png" />
+<figcaption>
+<p><span class="caption-text">Platform Mac is not a valid platform to build.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Fix.</strong> First download a supported Xcode version, e.g., <cite>16.4</cite>, from <a class="reference external" href="https://xcodereleases.com/">xcodereleases.com</a>. Unzip the Xcode and you will see the following.</p>
+<figure class="align-default" id="id3">
+<img alt="../_images/xcode_16.4.png" src="../_images/xcode_16.4.png" />
+<figcaption>
+<p><span class="caption-text">Downloaded Xcode 16.4.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then use <cite>xcode-select</cite> to ensure 16.4 is the default command-line build tool.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>xcode-select<span class="w"> </span>-s<span class="w"> </span>/Users/wufeim/Documents/Xcode.app/Contents/Developer
+
+<span class="c1"># optionally, verify the selected version</span>
+xcode-select<span class="w"> </span>-p
+</pre></div>
+</div>
+<p>Link the plugin code following the <a class="reference external" href="https://wufeim.github.io/LychSim/tutorials/installation.html#install-and-compile-lychsim-plugin">installation instructions</a>. Open the project and you will see the prompt to compile the <cite>LychSim</cite> plugin. Everything should work now.</p>
+<figure class="align-default" id="id4">
+<img alt="../_images/macos_rebuild.png" class="fig-mw-400" src="../_images/macos_rebuild.png" />
+<figcaption>
+<p><span class="caption-text">Prompt to compile the LychSim plugin.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../_images/macos_compile.png" src="../_images/macos_compile.png" />
+<figcaption>
+<p><span class="caption-text">LychSim plugin compiling…</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cannot-package-project-for-linux-issue-with-ubasessionserver">
+<h2>4. Cannot package project for Linux: Issue with UbaSessionServer<a class="headerlink" href="#cannot-package-project-for-linux-issue-with-ubasessionserver" title="Link to this heading">#</a></h2>
+<p>This issue may arise when packaging a project for Linux target platform. The log may show an error related to <cite>UbaSessionServer</cite>, <em>e.g.</em>, an unhandled exception as shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">UbaSessionServer</span> <span class="o">-</span> <span class="n">ASSERT</span><span class="p">:</span> <span class="n">Unhandled</span> <span class="ne">Exception</span> <span class="p">(</span><span class="n">Code</span><span class="p">:</span> <span class="mh">0xc0000005</span><span class="p">)</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">Callstack</span><span class="p">:</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ntdll</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x12d26</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ntdll</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x120f6</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ntdll</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x165c6e</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">UbaDetours</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x492e</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ucrtbase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x3d189</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ucrtbase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x14a0c</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ucrtbase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x1488b</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ucrtbase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x14844</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">ucrtbase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x14e01</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">combase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x183fcd</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">combase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x183fed</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">combase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x39cbc</span>
+<span class="n">UATHelper</span><span class="p">:</span> <span class="n">Packaging</span> <span class="p">(</span><span class="n">Linux</span><span class="p">):</span> <span class="n">combase</span><span class="o">.</span><span class="n">dll</span><span class="p">:</span> <span class="o">+</span><span class="mh">0x39306</span>
+</pre></div>
+</div>
+<p>The cause of this issue is to package project for Linux using some latest Windows updates, <em>e.g.</em>, <code class="code docutils literal notranslate"><span class="pre">KB5060842</span></code>, as discussed in <a class="reference external" href="https://forums.unrealengine.com/t/ubasessionserver-assert-by-cross-compile-toolchain-imd-ue5-5/2615317">this forum thred</a>.</p>
+<p>One workaround is to disable <strong>Unreal Build Automation (UBA)</strong> before packaging. Following <a class="reference external" href="https://dev.epicgames.com/community/learning/tutorials/9dv9/unreal-engine-disable-ubasessionserver-uba">this forum thread</a>, you can disable UBA by editing the <code class="code docutils literal notranslate"><span class="pre">BuildConfiguration.xml</span></code> file located at <code class="code docutils literal notranslate"><span class="pre">C:\Users\username\AppData\Roaming\Unreal</span> <span class="pre">Engine\UnrealBuildTool\BuildConfiguration.xml</span></code>. Update the configuration so both <code class="code docutils literal notranslate"><span class="pre">bAllowUBAExecutor</span></code> and <code class="code docutils literal notranslate"><span class="pre">bAllowUBALocalExecutor</span></code> are set to <code class="code docutils literal notranslate"><span class="pre">false</span></code>, as shown below.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</span>
+<span class="nt">&lt;Configuration</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;https://www.unrealengine.com/BuildConfiguration&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;BuildConfiguration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bAllowUBAExecutor&gt;</span>false<span class="nt">&lt;/bAllowUBAExecutor&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bAllowUBALocalExecutor&gt;</span>false<span class="nt">&lt;/bAllowUBALocalExecutor&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/BuildConfiguration&gt;</span>
+<span class="nt">&lt;/Configuration&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="plugin-lychsim-failed-to-load-because-module-lychsim-could-not-be-loaded">
+<h2>5. Plugin ‘LychSim’ failed to load because module ‘LychSim’ could not be loaded.<a class="headerlink" href="#plugin-lychsim-failed-to-load-because-module-lychsim-could-not-be-loaded" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id6">
+<img alt="../_images/operating_system_error.png" src="../_images/operating_system_error.png" />
+<figcaption>
+<p><span class="caption-text">Error when opening projects.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Fix.</strong> Open the <code class="code docutils literal notranslate"><span class="pre">.uproject</span></code> file with a text editor. Add the following lines to the <code class="code docutils literal notranslate"><span class="pre">Plugins</span></code> section.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+             <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;LidarPointCloud&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+             <span class="s2">&quot;SupportedTargetPlatforms&quot;</span><span class="p">:</span> <span class="p">[</span>
+                     <span class="s2">&quot;Win64&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;Mac&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;Linux&quot;</span>
+             <span class="p">]</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+<p>An example of the <code class="code docutils literal notranslate"><span class="pre">Plugins</span></code> section is shown below.</p>
+<figure class="align-default" id="id7">
+<img alt="../_images/uproject_example.png" src="../_images/uproject_example.png" />
+<figcaption>
+<p><span class="caption-text">Example of the Plugins section in .uproject file.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="camera_lit_params.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Camera Lit Capture Parameters</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              <dialog id="pst-secondary-sidebar-modal"></dialog>
+              <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc">
+                
+                  <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artifacts-and-low-quality-rendering-with-lumen">1. Artifacts and low-quality rendering with Lumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-connect-to-ue5">2. Cannot connect to UE5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-mac-is-not-a-valid-platform-to-build">3. Platform Mac is not a valid platform to build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-package-project-for-linux-issue-with-ubasessionserver">4. Cannot package project for Linux: Issue with UbaSessionServer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plugin-lychsim-failed-to-load-because-module-lychsim-could-not-be-loaded">5. Plugin ‘LychSim’ failed to load because module ‘LychSim’ could not be loaded.</a></li>
+</ul>
+  </nav></div>
+
+</div>
+                
+              </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, LychSim Team.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<div class="footer-items__start">
+<a href="https://ccvl.jhu.edu/">
+    <img src="../_static/ccvl_sm.png" height="30" style="margin-bottom: 0px;"/>
+</a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
