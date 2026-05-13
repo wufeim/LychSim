@@ -140,7 +140,12 @@ If you find LychSim helpful in your research, please cite our paper:
 
 .. code-block:: bibtex
 
-   TBD
+   @article{ma2026lychsim,
+     title={LychSim: A Controllable and Interactive Simulation Framework for Vision Research},
+     author={Ma, Wufei and Wang, Chloe and Chen, Siyi and Peng, Jiawei and Li, Patrick and Yuille, Alan},
+     journal={arXiv preprint arXiv:2605.12449},
+     year={2026}
+   }
 
 Acknowledgements
 ----------------
